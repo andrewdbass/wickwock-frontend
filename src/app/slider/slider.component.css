@@ -7,12 +7,12 @@
 .rs-control .rs-handle {
     background-color: #16b6ef;
 }
-.rs-control .rs-bg-color {
-    background-color: #090824;
+.rs-bg-color {
+    background-color: red;
 }
-.rs-border{
-  border:none;
+ .rs-inner-container{
+  background-color: red;
 }
-.rs-tooltip {
-position: static;
+.rs-tooltip .rs-tooltip-text{
+  color:red;
 }

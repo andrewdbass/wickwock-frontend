@@ -1,3 +1,32 @@
-<h1>
-  {{title}}
-</h1>
+<div class = "top">
+  <div class = "paddingWrapper">
+    <div class = "topIcons">
+      <div class = "hamburgerIcon">
+        <i class = "fa fa-bars"></i>
+      </div>
+      <div class = "refreshIcon">
+        <i class = "fa fa-repeat refreshIcon--backwards"></i>
+      </div>
+    </div>
+    <div class="sliderthing">
+      <app-slider ></app-slider>
+    </div>
+
+  </div>
+  <div class = "tabs">
+    <div class = "tab " [ngClass]= "{'tab--selected':articlesSelected}" (click) = "articles()">
+      ARTICLES
+    </div>
+    <div class = "tab" [ngClass]= "{'tab--selected':videosSelected}" (click) = "videos()">
+      VIDEOS
+    </div>
+    <div class = "tab" [ngClass]= "{'tab--selected':podcastsSelected}" (click) = "podcasts()">
+      PODCASTS
+    </div>
+  </div>
+  <div class = "bars">
+    <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
+    <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
+    <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
+  </div>
+</div>

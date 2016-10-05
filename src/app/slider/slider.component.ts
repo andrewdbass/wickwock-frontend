@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -6,28 +6,40 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  @ViewChild('slider') public slider:ElementRef;
+  @Output() time = new EventEmitter();
+  @ViewChild("slider") slider;any
   public width = 320
+  public selectedTime = 0;
+  public oldTime =100;
+  public selecting= false;
+  public message = ""
   constructor() { }
   onResize( event){
-    console.log(event.target.innerWidth)
+    this.width = event.target.innerWidth
   }
-  getTheValue() {
-    console.log($(this.slider.nativeElement).roundSlider('getValue'))
+  getValue(){
+    setInterval(()=>{
+      console.log("interval")
+      this.selectedTime=$(this.slider.nativeElement).roundSlider("getValue")
+      if(this.selectedTime != this.oldTime){
+        this.oldTime = this.selectedTime
+        this.time.emit({value: this.selectedTime});
+      }
+
+    },50)
+
   }
   ngOnInit() {
+    this.getValue()
   }
   ngAfterViewInit() {
     var slider = $(this.slider.nativeElement).roundSlider({
-        startAngle:90,
-        radius: (this.width-60)/2,
-        width: 8,
-        handleSize: "+16",
-        handleShape: "dot",
-        sliderType: "min-range",
-        value: 5,
-        max:20,
-        editableTooltip: false,
+      radius: (this.width-60)/2,
+      startAngle:90,
+      showTooltip:false,
+      handleSize:"+20",
+      max:30,
+      sliderType: "min-range",
     });
   }
 }

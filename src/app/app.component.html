@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="sliderthing">
-      <app-slider ></app-slider>
+      <app-slider (time) = "newTime($event)"></app-slider>
     </div>
 
   </div>
@@ -30,3 +30,5 @@
     <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
   </div>
 </div>
+<app-articles *ngIf = "articlesSelected"></app-articles>
+<app-videos [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "videosSelected"></app-videos>

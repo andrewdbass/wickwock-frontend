@@ -13,6 +13,6 @@
 .rs-border{
   border:none;
 }
-.rs-tooltip {
-position: static;
+.rs-range-color  {
+    background-color: #ff8d00;
 }

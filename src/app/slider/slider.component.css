@@ -1,18 +1,23 @@
-.rs-control .rs-range-color {
-    background-color: #54BBE0;
+.time{
+  z-index: 100;
+  position: absolute;
+  font-size: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  top:148px;
+  text-align: center;
+  width: 100px;
+  right: 30%;
+  left: 30%;
 }
-.rs-control .rs-path-color {
-    background-color: #32324b;
+.minutes{
+  font-size: 16px;
 }
-.rs-control .rs-handle {
-    background-color: #16b6ef;
-}
-.rs-bg-color {
-    background-color: red;
-}
- .rs-inner-container{
-  background-color: red;
-}
-.rs-tooltip .rs-tooltip-text{
-  color:red;
+.overlay{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
 }

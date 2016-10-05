@@ -1,2 +1,4 @@
-<div #slider id="slider" (click) = "getTheValue()"></div>
+<div #slider ></div>
+<div class = "time" style="">{{selectedTime}}<span class = "minutes"> M</span></div>
+<div class = "overlay" *ngIf ="selecting" ></div>
 <div id="Port" (window:resize)="onResize($event)" >

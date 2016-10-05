@@ -4,32 +4,31 @@ body{
   font-family: roboto;
 }
 .top{
-  background: red; /* For browsers that do not support gradients */
+
   background: -webkit-linear-gradient(#152F4F, #090824); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#152F4F, #090824); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#152F4F, #090824); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#152F4F, #090824); /* Standard syntax */
-  height: 58.6vh;
+  height: 433px;
   color:white;
 }
 .paddingWrapper{
-  padding: 4vh;
+  padding: 24px;
 }
 .topIcons{
   display: flex;
 }
 .hamburgerIcon{
-
-  font-size: 4vh;
+  font-size: 32px;
 }
 .refreshIcon{
   margin-left: auto;
-  font-size: 3vh;
+  font-size: 24px;
   background-color: #090824;
   color:#9FA0BC;
-  width: 6vh;
-  height: 6vh;
-  border-radius: 3vh;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,10 +46,10 @@ body{
   align-items: center;
 }
 .tabs{
-  margin-top: 5vh;
+  margin-top: 48px;
   display:flex;
   justify-content: flex-end;
-  font-size: 2vh;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.5);
 }
 .tab{

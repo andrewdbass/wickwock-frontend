@@ -1,0 +1,10 @@
+<div *ngFor = "let video of videos">
+  <!-- <iframe id="ytplayer" type="text/html" width="278" height="134"
+    [src]="'https://www.youtube.com/embed/'+video.id.videoId | safe"
+    frameborder="0"></iframe><br> -->
+  <div (click) = "showVideo(video.id.videoId)" class = "video">
+    <img [src]="'https://i.ytimg.com/vi/'+video.id.videoId+'/hqdefault.jpg'" />
+  </div>
+  {{video.snippet.title}}
+
+</div>

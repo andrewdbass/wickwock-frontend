@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -6,6 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
+  @Input() refresh: any;
   @Output() time = new EventEmitter();
   @ViewChild("slider") slider;any
   public width = 320
@@ -37,9 +38,14 @@ export class SliderComponent implements OnInit {
       radius: (this.width-60)/2,
       startAngle:90,
       showTooltip:false,
-      handleSize:"+20",
+      handleSize:"+16",
       max:30,
+      width:7,
       sliderType: "min-range",
     });
+    this.refresh.subscribe((r)=>{
+      console.log(r)
+      console.log($(this.slider.nativeElement).roundSlider("setValue", 0))
+    })
   }
 }

@@ -8,6 +8,7 @@ import { SliderComponent } from './slider/slider.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { VideosComponent } from './videos/videos.component';
 import { SafePipe } from './safe.pipe';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SafePipe } from './safe.pipe';
     SliderComponent,
     ArticlesComponent,
     VideosComponent,
-    SafePipe
+    SafePipe,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

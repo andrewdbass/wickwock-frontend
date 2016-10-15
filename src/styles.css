@@ -1,5 +1,6 @@
 .rs-control .rs-range-color {
     background-color: #54BBE0;
+    /*background-image: url('assets/images/slider_gradient.png')*/
 }
 .rs-control .rs-path-color {
     background-color: #32324b;
@@ -9,10 +10,22 @@
 }
 .rs-control .rs-bg-color {
     background-color: #090824;
+    background-image: url('assets/images/clockface.png');
+    background-size: 246px 246px;
+    background-repeat: no-repeat;
 }
 .rs-border{
   border:none;
 }
 .rs-range-color  {
     background-color: #ff8d00;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: roboto;
+  background-color: #F8F8F8;
 }

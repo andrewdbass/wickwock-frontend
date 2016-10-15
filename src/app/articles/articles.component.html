@@ -1,3 +1,20 @@
-<p>
-  articles works!
-</p>
+<div *ngIf="!articles">
+  Loading...
+</div>
+<div class = "article" *ngFor = "let article of articles">
+  <a [href] = "'https://www.medium.com/posts/'+article.id">
+    <img class = "article__image" *ngIf = "article.virtuals.previewImage.imageId !== ''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.virtuals.previewImage.imageId"  />
+    <div class = "article__title">
+      {{article.title}}
+    </div>
+    <div class = "article__subtitle">
+      <div>
+        Medium
+      </div>
+      <div class = "article__time">
+        <img  class = "article__time__icon" src = "../../assets/images/time.png" />
+        <span class ="article__time__text">{{article.virtuals.readingTime | number:'1.0-0'}}m</span>
+      </div>
+    </div>
+  </a>
+</div>

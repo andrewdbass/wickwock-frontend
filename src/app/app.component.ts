@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
   public articlesSelected = true;
   public videosSelected = false;
   public podcastsSelected = false;
+  public refresh = new EventEmitter();
+  public showMenu = false;
   constructor(){
 
   }
@@ -27,6 +29,7 @@ export class AppComponent implements OnInit{
     this.articlesSelected = true;
     this.videosSelected = false;
     this.podcastsSelected = false;
+    this.stime.emit(this.sliderTime)
 
   }
   public videos(){
@@ -44,6 +47,12 @@ export class AppComponent implements OnInit{
     this.videosSelected = false;
     this.podcastsSelected = true;
 
+  }
+  public refreshTime() {
+    this.refresh.emit(true);
+  }
+  public toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
   ngOnInit(){
     this.stime.emit(1)

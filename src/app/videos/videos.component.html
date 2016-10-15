@@ -1,10 +1,18 @@
 <div *ngFor = "let video of videos">
-  <!-- <iframe id="ytplayer" type="text/html" width="278" height="134"
-    [src]="'https://www.youtube.com/embed/'+video.id.videoId | safe"
-    frameborder="0"></iframe><br> -->
   <div (click) = "showVideo(video.id.videoId)" class = "video">
-    <img [src]="'https://i.ytimg.com/vi/'+video.id.videoId+'/hqdefault.jpg'" />
+    <div *ngIf= '!video.showPlayer'>
+      <img [src]="'https://i.ytimg.com/vi/'+video.id.videoId+'/hqdefault.jpg'" class = "video__image"/>
+    </div>
+    <div *ngIf= 'video.showPlayer'>
+       <iframe id="ytplayer" type="text/html" class = "video__iframe"
+  [src]="'https://www.youtube.com/embed/'+video.id.videoId+'/?autoplay=1&fs=1' | safe"
+  frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+    </div>
+    <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">
+      <img src = "../../assets/images/play_button.png" class = "video__play-button__img"/>
+    </div>
+    <div class = "video__title">
+      {{video.snippet.title}}
+    </div>
   </div>
-  {{video.snippet.title}}
-
 </div>

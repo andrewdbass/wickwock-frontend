@@ -15,12 +15,17 @@ export class VideosComponent implements OnInit {
   public videos = [];
   constructor(private http: Http) { }
   showVideo(id) {
-    console.log(id)
+    for(let video of this.videos){
+      if(video.id.videoId == id){
+        video.showPlayer = true
+      }
+    }
   }
   ngOnInit() {
     this.time.subscribe((r)=>{
       console.log("CHANGE "+ r)
-      this.http.get('http://localhost:3000/videos?time='+r)
+      //this.http.get('http://localhost:3000/videos?time='+r)
+      this.http.get('/videos?time='+r)
         .map(response => response.json()).subscribe((res)=>{
           this.videos = res.items;
           console.log(this.videos)

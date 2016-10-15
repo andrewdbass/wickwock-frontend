@@ -1,15 +1,16 @@
+<app-menu [show] = "showMenu" ></app-menu>
 <div class = "top">
   <div class = "paddingWrapper">
     <div class = "topIcons">
-      <div class = "hamburgerIcon">
+      <div class = "hamburgerIcon" (click) = "toggleMenu()">
         <i class = "fa fa-bars"></i>
       </div>
-      <div class = "refreshIcon">
+      <div class = "refreshIcon" (click) = "refreshTime()">
         <i class = "fa fa-repeat refreshIcon--backwards"></i>
       </div>
     </div>
-    <div class="sliderthing">
-      <app-slider (time) = "newTime($event)"></app-slider>
+    <div class="sliderthing" >
+      <app-slider [refresh] = "refresh" (time) = "newTime($event)"></app-slider>
     </div>
 
   </div>
@@ -30,5 +31,5 @@
     <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
   </div>
 </div>
-<app-articles *ngIf = "articlesSelected"></app-articles>
+<app-articles [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "articlesSelected"></app-articles>
 <app-videos [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "videosSelected"></app-videos>

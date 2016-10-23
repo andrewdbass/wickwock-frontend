@@ -1,0 +1,33 @@
+.card{
+  background: #FDFDFD;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
+  margin-bottom: 2vh;
+  padding: 4vh;
+}
+.podcast__title{
+  font-size: 18px;
+}
+.podcast__description{
+  font-size: 12px;
+}
+.duration{
+  display: flex;
+  font-size: 12px;
+  color: #7B7B7B;
+  align-items: center;
+  margin-top: 8px;;
+}
+.duration__icon{
+  margin-left: 16px;
+  width:16px;
+  height: 16px;
+}
+.duration__time{
+  margin-left: 4px;
+}
+.podcast__buttons{
+  display: flex;
+  width: 100px;
+  margin-left: auto;
+  justify-content: space-around;
+}

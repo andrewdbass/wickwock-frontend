@@ -10,10 +10,12 @@ import 'rxjs/Rx';
   styleUrls: ['./videos.component.css']
 })
 export class VideosComponent implements OnInit {
-  @Input() time: EventEmitter;
+  @Input() time: EventEmitter<any>;
   @Input() defaultTime:any;
   public videos = [];
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http
+  ) { }
   showVideo(id) {
     for(let video of this.videos){
       if(video.id.videoId == id){
@@ -24,8 +26,8 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
     this.time.subscribe((r)=>{
       console.log("CHANGE "+ r)
-      //this.http.get('http://localhost:3000/videos?time='+r)
-      this.http.get('/videos?time='+r)
+      this.http.get('http://localhost:3000/videos?time='+r)
+      //this.http.get('/videos?time='+r)
         .map(response => response.json()).subscribe((res)=>{
           this.videos = res.items;
           console.log(this.videos)

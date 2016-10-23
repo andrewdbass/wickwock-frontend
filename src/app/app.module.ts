@@ -9,6 +9,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { VideosComponent } from './videos/videos.component';
 import { SafePipe } from './safe.pipe';
 import { MenuComponent } from './menu/menu.component';
+import { PodcastsComponent } from './podcasts/podcasts.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MenuComponent } from './menu/menu.component';
     ArticlesComponent,
     VideosComponent,
     SafePipe,
-    MenuComponent
+    MenuComponent,
+    PodcastsComponent
   ],
   imports: [
     BrowserModule,

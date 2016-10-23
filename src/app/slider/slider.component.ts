@@ -39,7 +39,7 @@ export class SliderComponent implements OnInit {
       startAngle:90,
       showTooltip:false,
       handleSize:"+16",
-      max:30,
+      max:60,
       width:7,
       sliderType: "min-range",
     });

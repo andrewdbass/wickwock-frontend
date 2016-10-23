@@ -1,0 +1,28 @@
+<div *ngFor = "let podcast of podcasts " class = "card">
+  <div class = "podcast__title">{{podcast.title}}</div>
+  <div class = "podcast__description">
+    {{podcast.description.substring(0, 144)}}...
+  </div>
+  <div>
+    <div class = "duration">
+      <div>
+        {{podcast.author.name}}
+      </div>
+      <img  class = "duration__icon" src = "../../assets/images/time.png" />
+      <div class = "duration__time">
+        {{podcast.enclosure.duration/60 | number:'1.0-0'}}m
+      </div>
+      <div class = "podcast__buttons">
+        <a [href] = "podcast.enclosure.link" download>
+          <img src="../../assets/images/download.png" />
+        </a>
+        <img src = "../../assets/images/play.png"
+        *ngIf = "!playing"
+        (click)="playPodcast(podcast.enclosure.link)"/>
+        <img src = "../../assets/images/pause.png"
+        *ngIf = "playing"
+        (click)="pausePodcast(podcast.enclosure.link)"/>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,16 +9,18 @@ import 'rxjs/Rx';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-  @Input() time: EventEmitter;
+  @Input() time: EventEmitter<any>;
   @Input() defaultTime:any;
-  public videos = [];
-  constructor(private http: Http) { }
+  public articles = [];
+  constructor(
+    private http: Http
+  ) { }
 
   ngOnInit() {
     this.time.subscribe((t)=>{
       console.log("start")
-      //this.http.get('http://localhost:3000/articles')
-      this.http.get('/articles')
+      this.http.get('http://localhost:3000/articles')
+      //this.http.get('/articles')
         .map(response => response.json())
         .subscribe((res)=>{
           var arr = [];

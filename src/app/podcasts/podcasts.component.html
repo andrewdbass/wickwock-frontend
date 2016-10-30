@@ -10,7 +10,7 @@
       </div>
       <img  class = "duration__icon" src = "../../assets/images/time.png" />
       <div class = "duration__time">
-        {{podcast.enclosure.duration/60 | number:'1.0-0'}}m
+          {{podcast.enclosure.duration/60 | number:'1.0-0'}}m
       </div>
       <div class = "podcast__buttons">
         <a [href] = "podcast.enclosure.link" download>

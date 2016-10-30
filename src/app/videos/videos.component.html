@@ -5,7 +5,7 @@
     </div>
     <div *ngIf= 'video.showPlayer'>
        <iframe id="ytplayer" type="text/html" class = "video__iframe"
-  [src]="'https://www.youtube.com/embed/'+video.id.videoId+'/?autoplay=1&fs=1' | safe"
+    [src]="'https://www.youtube.com/embed/'+video.id.videoId+'/?autoplay=1&fs=1' | safe"
   frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
     <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">

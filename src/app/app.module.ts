@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 import { AppComponent} from './app.component';
 import { SliderComponent } from './slider/slider.component';
@@ -25,7 +26,8 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

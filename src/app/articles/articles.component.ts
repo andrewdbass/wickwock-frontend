@@ -31,7 +31,7 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.time.subscribe( (t)=>{
       console.log("start")
-      this.http.get('http://localhost/api/articles/?duration='+t)
+      this.http.get('http://104.236.190.91/api/articles/?duration='+t)
       //this.http.get('/articles')
         .map(response => response.json())
         .subscribe((res)=>{

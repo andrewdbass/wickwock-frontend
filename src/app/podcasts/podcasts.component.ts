@@ -45,7 +45,7 @@ export class PodcastsComponent implements OnInit {
   }
   ngOnInit() {
     console.log("starting")
-    this.http.get('http://localhost/apip/podcasts')
+    this.http.get('http://104.236.190.91/api/podcasts')
     //this.http.get('/podcasts')
       .map(response => response.json()).subscribe((res)=>{
         console.log(res)

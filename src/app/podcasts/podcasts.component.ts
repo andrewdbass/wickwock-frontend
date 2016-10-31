@@ -12,49 +12,66 @@ export class PodcastsComponent implements OnInit {
   @Input() defaultTime: any;
 
   private podcasts = [];
-  private data = []
+  private response: any;
 
-  private active;
+  private active = {};
   private playing: boolean;
 
   constructor(
     private http: Http
   ) {}
-  private listenForChange() {
-    this.time.subscribe((t) => {
-      this.podcasts = this.data.filter((r) => {
-        return r.enclosure.duration/60 <= t && r.enclosure.duration;
-      })
-    })
-  }
   private playPodcast(podcast,){
-    if(this.active){
-      this.active.play()
+    if(this.active.id === podcast.id){
+      this.active.widget.play()
     }
     else{
-      this.active = new Audio(podcast);
-      this.active.play()
+      if(this.active.id ){
+        this.active.widget.pause();
+      }
+      this.active.widget = new Audio(podcast.link);
+      this.active.id = podcast.id
+      this.active.widget.play()
     }
-    this.playing = true
+    this.active.playing = true
 
   }
   private pausePodcast(){
-    this.active.pause();
-    this.playing = false
+    this.active.widget.pause();
+    this.active.playing = false
 
   }
-  ngOnInit() {
-    console.log("starting")
-    this.http.get('http://104.236.190.91/api/podcasts')
-    //this.http.get('/podcasts')
-      .map(response => response.json()).subscribe((res)=>{
+  private loadMore(){
+    // this.articles = [].concat.apply([], this.articles);
+    console.log(this.response.next)
+    this.http.get(this.response.next)
+      .map(response => response.json())
+      .subscribe( (res) => {
+        this.response = res
         console.log(res)
-        this.data = res.channel.item
-        this.podcasts = this.data.filter((r) => {
-          return r.enclosure.duration/60 < this.defaultTime && r.enclosure.duration;
-        })
-        this.listenForChange();
-      })
+        this.podcasts = this.podcasts.concat(res.results)
+      });
+  }
+  ngOnInit() {
+    this.time.subscribe( (t)=>{
+      this.http.get('http://104.236.190.91/api/podcasts/?duration='+t)
+      //this.http.get('http://127.0.0.1:8000/api/podcasts/?duration='+t)
+        .map(response => response.json()).subscribe((res)=>{
+          console.log(res)
+          this.response = res
+          this.podcasts = res.results
+          if( this.active.id ){
+            this.active.widget.pause();
+            this.active = {};
+          }
+        });
+    });
+    this.time.emit(this.defaultTime)
+    var me = this
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+          me.loadMore()
+       }
+    });
   }
 
 }

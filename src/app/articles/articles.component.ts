@@ -32,15 +32,13 @@ export class ArticlesComponent implements OnInit {
     this.time.subscribe( (t)=>{
       console.log("start")
       this.http.get('http://104.236.190.91/api/articles/?duration='+t)
-      //this.http.get('/articles')
+      //this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
         .map(response => response.json())
         .subscribe((res)=>{
           console.log(res)
           this.response = res;
           this.articles = res.results;
         });
-
-
       });
       this.time.emit(this.defaultTime)
       var me = this

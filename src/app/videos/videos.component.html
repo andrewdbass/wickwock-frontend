@@ -1,18 +1,28 @@
 <div *ngFor = "let video of videos">
-  <div (click) = "showVideo(video.id.videoId)" class = "video">
+  <div (click) = "showVideo(video.id)" class = "video">
     <div *ngIf= '!video.showPlayer'>
-      <img [src]="'https://i.ytimg.com/vi/'+video.id.videoId+'/hqdefault.jpg'" class = "video__image"/>
+      <img [src]="video.image" class = "video__image"/>
     </div>
     <div *ngIf= 'video.showPlayer'>
        <iframe id="ytplayer" type="text/html" class = "video__iframe"
-    [src]="'https://www.youtube.com/embed/'+video.id.videoId+'/?autoplay=1&fs=1' | safe"
+    [src]=" video.link | safe"
   frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
     </div>
     <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">
       <img src = "../../assets/images/play_button.png" class = "video__play-button__img"/>
     </div>
     <div class = "video__title">
-      {{video.snippet.title}}
+      {{video.title}}
     </div>
+    <div class = "video__subtitle">
+      <div>
+        {{video.source}}
+      </div>
+      <div class = "video__time">
+        <img  class = "video__time__icon" src = "../../assets/images/time.png" />
+        <span class ="video__time__text">{{video.duration}}m</span>
+      </div>
+    </div>
+
   </div>
 </div>

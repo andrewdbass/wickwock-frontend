@@ -25,11 +25,11 @@
       PODCASTS
     </div>
   </div>
-  <div class = "bars">
+  <!-- <div class = "bars">
     <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
     <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
     <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
-  </div>
+  </div> -->
 </div>
 <app-articles [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "articlesSelected"></app-articles>
 <app-videos [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "videosSelected"></app-videos>

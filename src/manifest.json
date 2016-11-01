@@ -1,7 +1,7 @@
 {
   "name": "Wick Wock",
   "short_name": "Wick Wock",
-  "theme_color": "#1c3346",
+  "theme_color": "#101E3C",
   "background_color": "#101e3c",
   "display": "standalone",
   "orientation": "portrait",

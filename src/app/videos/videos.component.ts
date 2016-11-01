@@ -37,7 +37,7 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
     this.time.subscribe((r)=>{
       console.log("CHANGE "+ r)
-      this.http.get('https://wickwock.com/api/videos?duration='+r)
+      this.http.get('https://www.wickwock.com/api/videos?duration='+r)
       // this.http.get('http://127.0.0.1:8000/api/videos?duration='+r)
         .map(response => response.json()).subscribe((res)=>{
           this.response = res

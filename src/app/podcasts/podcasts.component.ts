@@ -53,7 +53,7 @@ export class PodcastsComponent implements OnInit {
   }
   ngOnInit() {
     this.time.subscribe( (t)=>{
-      this.http.get('http://104.236.190.91/api/podcasts/?duration='+t)
+      this.http.get('https://wickwock.com/api/podcasts/?duration='+t)
       //this.http.get('http://127.0.0.1:8000/api/podcasts/?duration='+t)
         .map(response => response.json()).subscribe((res)=>{
           console.log(res)

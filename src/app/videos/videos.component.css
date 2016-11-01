@@ -8,13 +8,17 @@
 }
 .video__iframe{
   display: block;
-  width: 80vw;
-  height: 45vw;
-  margin-bottom: 18vw;
+  width: 70vw;
+  height: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12vw;
 }
 .video__image{
   width:100%;
-  /*display: block;*/
+  /*background-color: black;*/
+  /*max-height: 236px;*/
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -31,10 +35,6 @@
   margin-top: -32px;;
   font-size: 16px;
   font-family: roboto;
-}
-.video__image{
-  width: 100%;
-  display: block;
 }
 .video__subtitle{
   display: flex;

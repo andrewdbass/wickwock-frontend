@@ -14,6 +14,7 @@
   font-family: roboto;
 }
 .article__image{
+  max-height: 236px;
   width: 100%;
   display: block;
 }
@@ -26,11 +27,11 @@
 }
 .article__time{
   display: flex;
-  margin-left: 4vw;
+  margin-left: 24px;
 }
 .article__time__icon{
-  width:5vw;
-  height: 5vw;
+  width: 16px;
+  height: 16px;
 }
 .article__time__text{
   margin-left: 1vw;

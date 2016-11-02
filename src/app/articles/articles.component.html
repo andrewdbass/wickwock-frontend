@@ -1,6 +1,9 @@
 <div *ngIf="!articles">
   Loading...
 </div>
+<div *ngIf="articles.length==0" class = "emptyStateText">
+  Set how much available time you have above.
+</div>
 <div class = "article" *ngFor = "let article of articles">
   <a [href] = "article.link">
     <img class = "article__image" *ngIf="article.image!==''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.image"  />

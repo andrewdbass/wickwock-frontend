@@ -35,3 +35,11 @@
   width: 24px;
   height: 24px;
 }
+.emptyStateText{
+    margin-top: 24px;
+    text-align: center;
+    color: grey;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

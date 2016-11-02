@@ -1,4 +1,6 @@
-
+<div *ngIf="videos.length==0" class = "emptyStateText">
+  Set how much available time you have above.
+</div>
 <div *ngFor = "let video of videos" (click) = "showVideo(video.id)" class = "video">
   <div *ngIf= '!video.showPlayer'>
     <img [src]="video.image" class = "video__image"/>

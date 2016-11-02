@@ -1,3 +1,6 @@
+<div *ngIf="podcasts.length==0" class = "emptyStateText">
+  Set how much available time you have above.
+</div>
 <div *ngFor = "let podcast of podcasts " class = "card">
   <div class = "podcast__title">{{podcast.title}}</div>
   <div class = "podcast__description">

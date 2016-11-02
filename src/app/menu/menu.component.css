@@ -41,3 +41,11 @@
 .menu__icon{
   margin-right: 16px;
 }
+.emptyStateText{
+    margin-top: 24px;
+    text-align: center;
+    color: grey;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

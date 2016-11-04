@@ -2,7 +2,7 @@
   Loading...
 </div>
 <div *ngIf="articles.length==0" class = "emptyStateText">
-  Set how much available time you have above.
+  {{emptyStateMessages[emptyStateMessageIndex]}} 
 </div>
 <div class = "article" *ngFor = "let article of articles">
   <a [href] = "article.link">

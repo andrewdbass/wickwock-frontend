@@ -14,6 +14,12 @@ export class VideosComponent implements OnInit {
   @Input() defaultTime:any;
   public videos = [];
   public response: any;
+  public emptyStateMessages =[
+    "Bored at work? Set the timer and we will serve up some awesome content.",
+    "Sitting on the john? Pick a time and we will find the perfect thing to read.",
+    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
+  ]
+  public emptyStateMessageIndex = 0;
   constructor(
     private http: Http
   ) { }
@@ -35,6 +41,7 @@ export class VideosComponent implements OnInit {
       });
   }
   ngOnInit() {
+    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
     this.time.subscribe((r)=>{
       console.log("CHANGE "+ r)
       this.http.get('https://www.wickwock.com/api/videos?duration='+r)

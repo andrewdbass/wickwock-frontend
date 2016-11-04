@@ -15,6 +15,12 @@ export class ArticlesComponent implements OnInit {
   public articles = [];
   public response: any;
   public lastRequest: any;
+  public emptyStateMessages =[
+    "Bored at work? Set the timer and we will serve up some awesome content.",
+    "Sitting on the john? Pick a time and we will find the perfect thing to read.",
+    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
+  ]
+  public emptyStateMessageIndex = 0;
   constructor(
     private http: Http
   ) { }
@@ -29,10 +35,11 @@ export class ArticlesComponent implements OnInit {
       });
   }
   ngOnInit() {
+    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
     this.time.subscribe( (t)=>{
       console.log("start")
       this.http.get('https://www.wickwock.com/api/articles/?duration='+t)
-      //this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
+        // this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
         .map(response => response.json())
         .subscribe((res)=>{
           console.log(res)

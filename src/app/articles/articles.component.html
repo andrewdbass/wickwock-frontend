@@ -2,8 +2,18 @@
   Loading...
 </div>
 <div *ngIf="articles.length==0" class = "emptyStateText">
-  {{emptyStateMessages[emptyStateMessageIndex]}} 
+  {{emptyStateMessages[emptyStateMessageIndex]}}
 </div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Content Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6401100792447378"
+     data-ad-slot="1576105446"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <div class = "article" *ngFor = "let article of articles">
   <a [href] = "article.link">
     <img class = "article__image" *ngIf="article.image!==''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.image"  />

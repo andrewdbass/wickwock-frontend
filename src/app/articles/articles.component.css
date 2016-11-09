@@ -57,3 +57,9 @@
   display: flex;
   padding: .25em;
 }
+.spinningCircle{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}

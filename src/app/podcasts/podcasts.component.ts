@@ -17,10 +17,12 @@ export class PodcastsComponent implements OnInit {
   ]
   public emptyStateMessageIndex = 0;
   private podcasts = [];
-  private response: any;
-
+  private nextnextRequest = {}
+  public lastRequestedUrl = ""
   private active = {};
   private playing: boolean;
+  public loading = false;
+
 
   constructor(
     private http: Http
@@ -46,15 +48,20 @@ export class PodcastsComponent implements OnInit {
 
   }
   private loadMore(){
-    // this.articles = [].concat.apply([], this.articles);
-    console.log(this.response.next)
-    this.http.get(this.response.next)
-      .map(response => response.json())
-      .subscribe( (res) => {
-        this.response = res
-        console.log(res)
-        this.podcasts = this.podcasts.concat(res.results)
-      });
+    if (this.lastRequestedUrl !== this.nextRequest.next) {
+      this.lastRequestedUrl = this.nextRequest.next
+      this.loading = true;
+      this.http.get(this.nextRequest.next)
+        .map(response => response.json())
+        .subscribe( (res) => {
+          console.log(res)
+          this.podcasts = this.podcasts.concat(res.results)
+          this.nextRequest = res
+          this.loading = false;
+          // this.nextPage++
+          // this.nextRequest.next = this.nextRequest.next.substring(0, this.nextRequest.length-2)+this.nextPage
+        });
+    }
   }
   ngOnInit() {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
@@ -63,8 +70,10 @@ export class PodcastsComponent implements OnInit {
       //this.http.get('http://127.0.0.1:8000/api/podcasts/?duration='+t)
         .map(response => response.json()).subscribe((res)=>{
           console.log(res)
-          this.response = res
+          this.nextRequest = res
           this.podcasts = res.results
+          this.lastRequestedUrl = 'https://www.wickwock.com/api/podcasts/?duration='+t
+
           if( this.active.id ){
             this.active.widget.pause();
             this.active = {};

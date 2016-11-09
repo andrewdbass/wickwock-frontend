@@ -39,8 +39,8 @@ export class ArticlesComponent implements OnInit {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
     this.time.subscribe( (t)=>{
       console.log("start")
-      //this.http.get('https://www.wickwock.com/api/articles/?duration='+t)
-       this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
+      this.http.get('https://www.wickwock.com/api/articles/?duration='+t)
+      //this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
         .map(response => response.json())
         .subscribe((res)=>{
           this.articles = res.results

@@ -1,24 +1,31 @@
 <div *ngIf="!articles">
   Loading...
 </div>
-<div *ngIf="articles.length==0" class = "emptyStateText">
+<div *ngIf="articles.length===0" class = "emptyStateText">
   {{emptyStateMessages[emptyStateMessageIndex]}}
 </div>
 
-<div class = "article" *ngFor = "let article of articles">
-  <a [href] = "article.link">
-    <img class = "article__image" *ngIf="article.image!==''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.image"  />
-    <div class = "article__title">
-      {{article.title}}
-    </div>
-    <div class = "article__subtitle">
-      <div>
-        {{article.source}}
+<div *ngFor = "let article of articles">
+  <div class = "article">
+    <a [href] = "article.link">
+      <img class = "article__image" *ngIf="article.image!==''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.image"  />
+      <div class = "article__title">
+        {{article.title}}
       </div>
-      <div class = "article__time">
-        <img  class = "article__time__icon" src = "../../assets/images/time.png" />
-        <span class ="article__time__text">{{article.duration}}m</span>
+      <div class = "article__subtitle">
+        <div>
+          {{article.source}}
+        </div>
+        <div class = "article__time">
+          <img  class = "article__time__icon" src = "../../assets/images/time.png" />
+          <span class ="article__time__text">{{article.duration}}m</span>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
+  <ng2-adsense *ngIf = "articles.indexOf(article)%4===0" [adClient]="'ca-pub-6401100792447378'" [adSlot]="1576105446"></ng2-adsense>
+</div>
+<div *ngIf="articles.length!==0" class = "loadMoreButton" (click) = "loadMore()" >
+  <i class = "loadMoreButton__icon" style="display:flex" class="fa fa-refresh" aria-hidden="true"></i>
+  <div class = "loadMoreButton__text">Load More</div>
 </div>

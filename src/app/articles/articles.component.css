@@ -44,3 +44,16 @@
     margin-left: auto;
     margin-right: auto;
 }
+.loadMoreButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: blue;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.loadMoreButton__icon{
+  display: flex;
+  padding: .25em;
+}

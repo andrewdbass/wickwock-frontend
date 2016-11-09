@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { AdsenseModule } from 'ng2-adsense';
 
 import { AppComponent} from './app.component';
 import { SliderComponent } from './slider/slider.component';
@@ -27,7 +28,8 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
     FormsModule,
     HttpModule,
     JsonpModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    AdsenseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

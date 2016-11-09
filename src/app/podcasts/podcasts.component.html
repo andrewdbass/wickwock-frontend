@@ -1,31 +1,34 @@
 <div *ngIf="podcasts.length==0" class = "emptyStateText">
-  {{emptyStateMessages[emptyStateMessageIndex]}} 
+  {{emptyStateMessages[emptyStateMessageIndex]}}
 </div>
-<div *ngFor = "let podcast of podcasts " class = "card">
-  <div class = "podcast__title">{{podcast.title}}</div>
-  <div class = "podcast__description">
-    {{podcast.description}}...
-  </div>
-  <div>
-    <div class = "duration">
-      <div>
-        {{podcast.source}}
-      </div>
-      <img  class = "duration__icon" src = "../../assets/images/time.png" />
-      <div class = "duration__time">
-          {{podcast.duration}}m
-      </div>
-      <div class = "podcast__buttons">
-        <a [href] = "podcast.link" download>
-          <img class = "podcast__button" src="../../assets/images/download.png" />
-        </a>
-        <img class = "podcast__button" src = "../../assets/images/play.png"
-        *ngIf = "!active.playing || active.id !== podcast.id"
-        (click)="playPodcast(podcast)"/>
-        <img class = "podcast__button" src = "../../assets/images/pause.png"
-        *ngIf = "active.id === podcast.id && active.playing"
-        (click)="pausePodcast(podcast)"/>
+<div *ngFor = "let podcast of podcasts " >
+  <div class = "card">
+    <div class = "podcast__title">{{podcast.title}}</div>
+    <div class = "podcast__description">
+      {{podcast.description}}...
+    </div>
+    <div>
+      <div class = "duration">
+        <div>
+          {{podcast.source}}
+        </div>
+        <img  class = "duration__icon" src = "../../assets/images/time.png" />
+        <div class = "duration__time">
+            {{podcast.duration}}m
+        </div>
+        <div class = "podcast__buttons">
+          <a [href] = "podcast.link" download>
+            <img class = "podcast__button" src="../../assets/images/download.png" />
+          </a>
+          <img class = "podcast__button" src = "../../assets/images/play.png"
+          *ngIf = "!active.playing || active.id !== podcast.id"
+          (click)="playPodcast(podcast)"/>
+          <img class = "podcast__button" src = "../../assets/images/pause.png"
+          *ngIf = "active.id === podcast.id && active.playing"
+          (click)="pausePodcast(podcast)"/>
+        </div>
       </div>
     </div>
   </div>
+  <ng2-adsense *ngIf = "podcasts.indexOf(podcast)%5===0" [adClient]="'ca-pub-6401100792447378'" [adSlot]="1576105446"></ng2-adsense>
 </div>

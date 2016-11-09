@@ -1,29 +1,31 @@
 <div *ngIf="videos.length==0" class = "emptyStateText">
-  {{emptyStateMessages[emptyStateMessageIndex]}} 
+  {{emptyStateMessages[emptyStateMessageIndex]}}
 </div>
-<div *ngFor = "let video of videos" (click) = "showVideo(video.id)" class = "video">
-  <div *ngIf= '!video.showPlayer'>
-    <img [src]="video.image" class = "video__image"/>
-  </div>
-  <div *ngIf= 'video.showPlayer'>
-     <iframe id="ytplayer" type="text/html" class = "video__iframe"
-  [src]=" video.link | safe"
-frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
-  </div>
-  <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">
-    <img src = "../../assets/images/play_button.png" class = "video__play-button__img"/>
-  </div>
-  <div class = "video__title">
-    {{video.title}}
-  </div>
-  <div class = "video__subtitle">
-    <div>
-      {{video.source}}
+<div *ngFor = "let video of videos" (click) = "showVideo(video.id)">
+  <div class = "video">
+    <div *ngIf= '!video.showPlayer'>
+      <img [src]="video.image" class = "video__image"/>
     </div>
-    <div class = "video__time">
-      <img  class = "video__time__icon" src = "../../assets/images/time.png" />
-      <span class ="video__time__text">{{video.duration}}m</span>
+    <div *ngIf= 'video.showPlayer'>
+       <iframe id="ytplayer" type="text/html" class = "video__iframe"
+    [src]=" video.link | safe"
+  frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+    </div>
+    <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">
+      <img src = "../../assets/images/play_button.png" class = "video__play-button__img"/>
+    </div>
+    <div class = "video__title">
+      {{video.title}}
+    </div>
+    <div class = "video__subtitle">
+      <div>
+        {{video.source}}
+      </div>
+      <div class = "video__time">
+        <img  class = "video__time__icon" src = "../../assets/images/time.png" />
+        <span class ="video__time__text">{{video.duration}}m</span>
+      </div>
     </div>
   </div>
-
+  <ng2-adsense *ngIf = "videos.indexOf(video)%5===0" [adClient]="'ca-pub-6401100792447378'" [adSlot]="1576105446"></ng2-adsense>
 </div>

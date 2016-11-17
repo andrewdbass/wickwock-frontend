@@ -70,7 +70,7 @@ export class TagsComponent implements OnInit {
       })
     }
     else{
-      this.http.get("http://localhost:8000/api/tags")
+      this.http.get("https://wickwock.com/api/tags")
         .map(response => response.json())
         .subscribe((r)=>{
         this.tags = this.tags.concat(r.results)

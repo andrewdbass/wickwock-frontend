@@ -59,7 +59,7 @@ export class ArticlesComponent implements OnInit {
       }
       // else console.log(c)
       console.log(this.tagsValue)
-      var url =' http://127.0.0.1:8000/api/articles/?duration='+this.timeValue
+      var url ='https://wickwock.com/api/articles/?duration='+this.timeValue
       for(let tag of this.tagsValue) {
         url = url + "&tags="+ tag.id
       }
@@ -76,8 +76,7 @@ export class ArticlesComponent implements OnInit {
       this.time.emit(this.defaultTime)
       var me = this
       $(window).scroll(function() {
-        console.log(($(window).scrollTop() + $(window).height()) + "  " + $(document).height())
-         if($(window).scrollTop() + $(window).height() + 3 >= $(document).height()) {
+         if($(window).scrollTop() + $(window).height() + 10 >= $(document).height()) {
             me.loadMore()
             console.log("CALLED")
          }

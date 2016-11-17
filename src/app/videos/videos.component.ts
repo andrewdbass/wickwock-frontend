@@ -69,7 +69,7 @@ export class VideosComponent implements OnInit {
       }
       // else console.log(c)
       console.log(this.tagsValue)
-      var url =' http://127.0.0.1:8000/api/videos/?duration='+this.timeValue
+      var url ='https://wickwock.com/api/videos/?duration='+this.timeValue
       for(let tag of this.tagsValue) {
         url = url + "&tags="+ tag.id
       }

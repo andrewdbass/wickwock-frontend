@@ -1,0 +1,16 @@
+<div class = "wrapper">
+  <div class = "tagArea--global">
+    <div *ngIf = "!allSelected"class = "tag tag--global" (click) = "changeAllTags(!allSelected)">
+      ALL
+    </div>
+    <div *ngIf = "allSelected" class = "tag tag--selected tag--global" (click) = "changeAllTags(!allSelected)">
+      ALL
+    </div>
+  </div>
+  <div class = "tagArea">
+    <div [ngClass] = "tag.style" *ngFor = "let tag of tags" (click) = "toggleTag(tag)">
+      {{tag.name}}
+    </div>
+  </div>
+
+</div>

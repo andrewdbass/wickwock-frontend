@@ -11,7 +11,10 @@ import 'rxjs/Rx';
 export class ArticlesComponent implements OnInit {
   @Input() time: EventEmitter<any>;
   @Input() defaultTime:any;
-
+  @Input() defaultTags:any;
+  @Input() tags: EventEmitter<any>;
+  public timeValue: number;
+  public tagsValue =[];
   public articles = [];
   public nextRequest = ""
   public nextPage = 1
@@ -44,23 +47,37 @@ export class ArticlesComponent implements OnInit {
   }
   ngOnInit() {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
-    this.time.subscribe( (t)=>{
-      console.log("start")
-      this.http.get('https://www.wickwock.com/api/articles/?duration='+t)
-      //this.http.get('http://127.0.0.1:8000/api/articles/?duration='+t)
+
+    let change = Observable.merge(this.time, this.tags);
+
+    change.subscribe((c)=>{
+      if (typeof c !=="undefined" && typeof c !== 'number') {
+        this.tagsValue = c
+      }
+      else if(typeof c === "number") {
+        this.timeValue = c
+      }
+      // else console.log(c)
+      console.log(this.tagsValue)
+      var url =' http://127.0.0.1:8000/api/articles/?duration='+this.timeValue
+      for(let tag of this.tagsValue) {
+        url = url + "&tags="+ tag.id
+      }
+      console.log(url)
+      this.http.get(url)
         .map(response => response.json())
         .subscribe((res)=>{
           this.articles = res.results
           this.nextRequest = res
-          this.lastRequestedUrl = 'https://www.wickwock.com/api/articles/?duration='+t
-          // this.nextPage++
-          // console.log(this.nextRequest.next)
-        });
-      });
+          this.lastRequestedUrl = 'https://www.wickwock.com/api/articles/?duration='+this.timeValue
+          });
+      })
+      this.tags.emit(this.defaultTags)
       this.time.emit(this.defaultTime)
       var me = this
       $(window).scroll(function() {
-         if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        console.log(($(window).scrollTop() + $(window).height()) + "  " + $(document).height())
+         if($(window).scrollTop() + $(window).height() + 3 >= $(document).height()) {
             me.loadMore()
             console.log("CALLED")
          }

@@ -12,6 +12,7 @@ import { VideosComponent } from './videos/videos.component';
 import { SafePipe } from './safe.pipe';
 import { MenuComponent } from './menu/menu.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
     VideosComponent,
     SafePipe,
     MenuComponent,
-    PodcastsComponent
+    PodcastsComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,

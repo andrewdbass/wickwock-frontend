@@ -10,6 +10,7 @@ import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 export class PodcastsComponent implements OnInit {
   @Input() time: EventEmitter<any>;
   @Input() defaultTime: any;
+  @Input() tags: EventEmitter<any>;
   public emptyStateMessages =[
     "Bored at work? Set the timer and we will serve up some awesome content.",
     "Sitting on the john? Pick a time and we will find the perfect thing to listen to.",
@@ -66,8 +67,8 @@ export class PodcastsComponent implements OnInit {
   ngOnInit() {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
     this.time.subscribe( (t)=>{
-      this.http.get('https://www.wickwock.com/api/podcasts/?duration='+t)
-      //this.http.get('http://127.0.0.1:8000/api/podcasts/?duration='+t)
+      //this.http.get('https://www.wickwock.com/api/podcasts/?duration='+t)
+      this.http.get('http://127.0.0.1:8000/api/podcasts/?duration='+t)
         .map(response => response.json()).subscribe((res)=>{
           console.log(res)
           this.nextRequest = res

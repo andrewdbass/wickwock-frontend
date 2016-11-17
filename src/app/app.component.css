@@ -1,10 +1,7 @@
 
 .top{
-  background: -webkit-linear-gradient(#152F4F, #090824); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#152F4F, #090824); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#152F4F, #090824); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#152F4F, #090824); /* Standard syntax */
-  height: 416px;
+  background-color: #3b41ff;
+  height: 345px;
   color:white;
 }
 .paddingWrapper{
@@ -12,15 +9,23 @@
 }
 .topIcons{
   display: flex;
+  align-items: center;
 }
 .hamburgerIcon{
-  font-size: 32px;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  background-color: #1340AF;
+  justify-content: center;
+  align-items: center;
 }
 .refreshIcon{
   margin-left: auto;
   font-size: 24px;
-  background-color: #090824;
-  color:#9FA0BC;
+  background-color: #1340AF;
+  color: white;
   width: 32px;
   height: 32px;
   border-radius: 16px;
@@ -39,39 +44,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px;
-  background-color: #0c0425;
+  /*padding: 6px;
+  background-color: #0c0425;*/
   border-radius: 136px;
   width: 260px;
   margin-left: auto;
   margin-right: auto;
 }
 .tabs{
-  margin-top: 24px;
+  /*margin-top: 24px;*/
+  margin-bottom: 8px;
   display:flex;
   flex: 1 1 auto;
   /*justify-content: space-around;*/
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #969CAC;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.17);
 }
 .tab{
-
+  background-color: white;
   cursor: pointer;
-  border-bottom: 6px #101E3C solid;
+  border-bottom: 6px white solid;
   text-align: center;
   flex: 1 1 auto;
-  padding-bottom: 8px;
+  padding: 8px;
 }
 .tab--selected{
-  color:white;
-  border-bottom: 6px #148EBE solid;
+  color: #2060FF;
+  border-bottom: 6px #2060FF solid;
 }
 .bars{
   display: flex;
 }
 .bar{
   height: 3px;
-  background-color: #148EBE;
+  background-color: white;
   width: 35%;
 }
 .bar--articles{

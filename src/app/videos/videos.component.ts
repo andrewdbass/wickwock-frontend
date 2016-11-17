@@ -12,6 +12,11 @@ import 'rxjs/Rx';
 export class VideosComponent implements OnInit {
   @Input() time: EventEmitter<any>;
   @Input() defaultTime:any;
+  @Input() tags: EventEmitter<any>;
+  @Input() defaultTags: any;
+
+  public timeValue: number;
+  public tagsValue =[];
   public videos = [];
   public response: any;
   public lastRequestedUrl = ""
@@ -53,24 +58,39 @@ export class VideosComponent implements OnInit {
   }
   ngOnInit() {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
-    this.time.subscribe((r)=>{
-      console.log("CHANGE "+ r)
-      this.http.get('https://www.wickwock.com/api/videos?duration='+r)
-       //this.http.get('http://127.0.0.1:8000/api/videos?duration='+r)
-        .map(response => response.json()).subscribe((res)=>{
-          this.nextRequest = res
-          this.videos = res.results;
-          console.log(this.videos)
-          this.lastRequestedUrl = 'https://www.wickwock.com/api/videos?duration='+r
 
-        })
+    let changes = Observable.merge(this.time, this.tags);
+    changes.subscribe((c)=>{
+      if (typeof c !=="undefined" && typeof c !== 'number') {
+        this.tagsValue = c
+      }
+      else if(typeof c === "number") {
+        this.timeValue = c
+      }
+      // else console.log(c)
+      console.log(this.tagsValue)
+      var url =' http://127.0.0.1:8000/api/videos/?duration='+this.timeValue
+      for(let tag of this.tagsValue) {
+        url = url + "&tags="+ tag.id
+      }
+      console.log(url)
+      this.http.get(url)
+        .map(response => response.json())
+        .subscribe((res)=>{
+          this.videos = res.results
+          this.nextRequest = res
+          this.lastRequestedUrl = url
+          });
     })
     this.time.emit(this.defaultTime)
+    this.tags.emit(this.defaultTags)
     var me = this
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
           me.loadMore()
+          console.log("CALLED")
        }
     });
   }
+
 }

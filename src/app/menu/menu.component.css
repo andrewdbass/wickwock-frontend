@@ -26,6 +26,7 @@
 }
 .menu__logo{
   display: block;
+  width: 100%;
 }
 .menu__row{
   font-size: 12px;

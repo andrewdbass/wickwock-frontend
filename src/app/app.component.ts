@@ -10,7 +10,9 @@ import { VideosComponent } from './videos/videos.component'
 })
 export class AppComponent implements OnInit{
   public stime = new EventEmitter();
+  public tags = new EventEmitter();
   public sliderTime = 0;
+  public tagsList: any;
   public articlesSelected = true;
   public videosSelected = false;
   public podcastsSelected = false;
@@ -22,6 +24,12 @@ export class AppComponent implements OnInit{
   public newTime(event){
     this.stime.emit(event.value)
     this.sliderTime = event.value
+  }
+  public changeSelectedTags(event){
+    this.tagsList = event;
+    console.log(this.tagsList)
+    this.tags.emit(event)
+    console.log(event)
   }
   public articles(){
     console.log("articles")

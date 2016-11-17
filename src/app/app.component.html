@@ -14,23 +14,24 @@
     </div>
 
   </div>
-  <div class = "tabs">
-    <div class = "tab " [ngClass]= "{'tab--selected':articlesSelected}" (click) = "articles()">
-      ARTICLES
-    </div>
-    <div class = "tab" [ngClass]= "{'tab--selected':videosSelected}" (click) = "videos()">
-      VIDEOS
-    </div>
-    <div class = "tab" [ngClass]= "{'tab--selected':podcastsSelected}" (click) = "podcasts()">
-      PODCASTS
-    </div>
-  </div>
   <!-- <div class = "bars">
     <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
     <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
     <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
   </div> -->
 </div>
-<app-articles [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "articlesSelected"></app-articles>
-<app-videos [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "videosSelected"></app-videos>
-<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' *ngIf = "podcastsSelected" ></app-podcasts>
+<app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
+<div class = "tabs">
+  <div class = "tab " [ngClass]= "{'tab--selected':articlesSelected}" (click) = "articles()">
+    ARTICLES
+  </div>
+  <div class = "tab" [ngClass]= "{'tab--selected':videosSelected}" (click) = "videos()">
+    VIDEOS
+  </div>
+  <div class = "tab" [ngClass]= "{'tab--selected':podcastsSelected}" (click) = "podcasts()">
+    PODCASTS
+  </div>
+</div>
+<app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
+<app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
+<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts>

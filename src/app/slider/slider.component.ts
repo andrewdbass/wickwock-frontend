@@ -38,9 +38,9 @@ export class SliderComponent implements OnInit {
       radius: (this.width-60)/2,
       startAngle:90,
       showTooltip:false,
-      handleSize:"+16",
+      handleSize:"+22",
       max:60,
-      width:7,
+      width:8,
       sliderType: "min-range",
     });
     this.refresh.subscribe((r)=>{

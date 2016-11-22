@@ -7,8 +7,8 @@
 
 <div *ngFor = "let article of articles">
   <div class = "article">
-    <a [href] = "article.link">
-      <img class = "article__image" *ngIf="article.image!==''" [src] = "'https://cdn-images-1.medium.com/fit/t/800/240/'+article.image"  />
+    <a [href] = "article.link" target="_blank">
+      <img class = "article__image" *ngIf="article.image!==''" [src] = "article.image"  />
       <div class = "article__title">
         {{article.title}}
       </div>

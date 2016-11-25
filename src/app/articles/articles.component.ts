@@ -69,7 +69,7 @@ export class ArticlesComponent implements OnInit {
         .subscribe((res)=>{
           this.articles = res.results
           this.nextRequest = res
-          this.lastRequestedUrl = 'https://www.wickwock.com/api/articles/?duration='+this.timeValue
+          this.lastRequestedUrl = url
           });
       })
       this.tags.emit(this.defaultTags)

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
-
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-podcasts',
@@ -9,8 +10,12 @@ import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 })
 export class PodcastsComponent implements OnInit {
   @Input() time: EventEmitter<any>;
-  @Input() defaultTime: any;
+  @Input() defaultTime:any;
+  @Input() defaultTags:any;
   @Input() tags: EventEmitter<any>;
+  public timeValue: number;
+  public tagsValue =[];
+
   public emptyStateMessages =[
     "Bored at work? Set the timer and we will serve up some awesome content.",
     "Sitting on the john? Pick a time and we will find the perfect thing to listen to.",
@@ -66,22 +71,31 @@ export class PodcastsComponent implements OnInit {
   }
   ngOnInit() {
     this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
-    this.time.subscribe( (t)=>{
-      //this.http.get('https://www.wickwock.com/api/podcasts/?duration='+t)
-      this.http.get('https://wickwock.com/api/podcasts/?duration='+t)
-        .map(response => response.json()).subscribe((res)=>{
-          console.log(res)
-          this.nextRequest = res
+    let change = Observable.merge(this.time, this.tags);
+    change.subscribe((c)=>{
+      if (typeof c !=="undefined" && typeof c !== 'number') {
+        this.tagsValue = c
+      }
+      else if(typeof c === "number") {
+        this.timeValue = c
+      }
+      // else console.log(c)
+      console.log(this.tagsValue)
+      var url ='https://wickwock.com/api/podcasts/?duration='+this.timeValue
+      for(let tag of this.tagsValue) {
+        url = url + "&tags="+ tag.id
+      }
+      console.log(url)
+      this.http.get(url)
+        .map(response => response.json())
+        .subscribe((res)=>{
           this.podcasts = res.results
-          this.lastRequestedUrl = 'https://www.wickwock.com/api/podcasts/?duration='+t
-
-          if( this.active.id ){
-            this.active.widget.pause();
-            this.active = {};
-          }
-        });
-    });
-    this.time.emit(this.defaultTime)
+          this.nextRequest = res
+          this.lastRequestedUrl = 'https://wickwock.com/api/podcasts/?duration='+this.timeValue
+          });
+      })
+      this.tags.emit(this.defaultTags)
+      this.time.emit(this.defaultTime)
     var me = this
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {

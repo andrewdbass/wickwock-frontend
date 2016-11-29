@@ -1,0 +1,112 @@
+
+.top{
+  background-color: #3b41ff;
+  height: 369px;
+  color:white;
+}
+.paddingWrapper{
+  padding: 24px;
+}
+.topIcons{
+  display: flex;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.top__logo{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top__logo img{
+  display: flex;
+  width: 80%;
+}
+.hamburgerIcon{
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  background-color: #1340AF;
+  justify-content: center;
+  align-items: center;
+}
+.refreshIcon{
+  margin-left: auto;
+  font-size: 24px;
+  background-color: #1340AF;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.refreshIcon--backwards{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.sliderthing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*padding: 6px;
+  background-color: #0c0425;*/
+  border-radius: 136px;
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabs{
+  /*margin-top: 24px;*/
+  margin-bottom: 8px;
+  display:flex;
+  flex: 1 1 auto;
+  /*justify-content: space-around;*/
+  font-size: 16px;
+  color: #969CAC;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.17);
+}
+.tab{
+  background-color: white;
+  cursor: pointer;
+  border-bottom: 6px white solid;
+  text-align: center;
+  flex: 1 1 auto;
+  padding: 8px;
+}
+.tab--selected{
+  color: #2060FF;
+  border-bottom: 6px #2060FF solid;
+}
+.bars{
+  display: flex;
+}
+.bar{
+  height: 3px;
+  background-color: white;
+  width: 35%;
+}
+.bar--articles{
+  margin-right: auto;
+}
+.bar--videos{
+  margin-right: auto;
+  margin-left: auto;
+}
+.bar--podcasts{
+  margin-left: auto;
+}
+
+/*GLOBALS*/
+.card{
+  background: #FDFDFD;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.16);
+  margin-bottom: 2vh;
+  padding: 4vh;
+}

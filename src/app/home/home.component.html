@@ -1,10 +1,11 @@
-<!-- <app-menu [show] = "showMenu" ></app-menu>
+<app-menu [show] = "showMenu" ></app-menu>
 <div class = "top">
   <div class = "paddingWrapper">
     <div class = "topIcons">
       <div class = "hamburgerIcon" (click) = "toggleMenu()">
         <i class = "fa fa-bars"></i>
       </div>
+      <div class = "top__logo"><img src = '../../assets/images/white_logo.png'/></div>
       <div class = "refreshIcon" (click) = "refreshTime()">
         <i class = "fa fa-repeat refreshIcon--backwards"></i>
       </div>
@@ -14,11 +15,11 @@
     </div>
 
   </div>
-  <div class = "bars">
+  <!-- <div class = "bars">
     <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
     <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
     <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
-  </div>
+  </div> -->
 </div>
 <app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
 <div class = "tabs">
@@ -34,5 +35,4 @@
 </div>
 <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
 <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
-<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts> -->
-<router-outlet></router-outlet>
+<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts>

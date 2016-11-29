@@ -1,15 +1,14 @@
 import { Component, EventEmitter, OnInit} from '@angular/core';
-import { SliderComponent } from './slider/slider.component'
-import { ArticlesComponent } from './articles/articles.component'
-import { VideosComponent } from './videos/videos.component'
-import { HomeComponent } from './home/home.component'
+import { SliderComponent } from '../slider/slider.component'
+import { ArticlesComponent } from '../articles/articles.component'
+import { VideosComponent } from '../videos/videos.component'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent implements OnInit{
+export class HomeComponent implements OnInit{
   public stime = new EventEmitter();
   public tags = new EventEmitter();
   public sliderTime = 0;

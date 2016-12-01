@@ -16,6 +16,7 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
 import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
+import {MdGridListModule} from '@angular2-material/grid-list/grid-list.js';
 
 const appRoutes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     JsonpModule,
     InfiniteScrollModule,
     AdsenseModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MdGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

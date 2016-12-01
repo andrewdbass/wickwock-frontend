@@ -1,4 +1,4 @@
-<div class = "wrapper">
+<!-- <div class = "wrapper">
   <div class = "tagArea--global">
     <div *ngIf = "!allSelected"class = "tag tag--global" (click) = "changeAllTags(!allSelected)">
       ALL
@@ -13,4 +13,16 @@
     </div>
   </div>
 
-</div>
+</div> -->
+<md-grid-list cols="3" gutterSize="18px" >
+   <md-grid-tile *ngFor="let tag of tags" class = "filters__tile" >
+     <div class = "tile__content">
+       <div class="tile__icon">
+         <i class="icon-business"></i>
+       </div>
+       <div>
+         {{tag.name}}
+       </div>
+     </div>
+   </md-grid-tile>
+</md-grid-list>

@@ -1,4 +1,4 @@
-<app-menu [show] = "showMenu" ></app-menu>
+<!-- <app-menu [show] = "showMenu" ></app-menu>
 <div class = "top">
   <div class = "paddingWrapper">
     <div class = "topIcons">
@@ -15,11 +15,6 @@
     </div>
 
   </div>
-  <!-- <div class = "bars">
-    <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
-    <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
-    <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
-  </div> -->
 </div>
 <app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
 <div class = "tabs">
@@ -35,4 +30,66 @@
 </div>
 <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
 <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
-<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts>
+<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts> -->
+<div class = "home__wrapper">
+  <div class = "filters">
+    <div class = "filters__top">
+      <div class = "filters__instructionText">
+        Set Time
+      </div>
+      <div class="sliderthing" >
+        <app-slider [refresh] = "refresh" (time) = "newTime($event)"></app-slider>
+      </div>
+      <div class ="filters__buttons">
+        <div class = "filters__button">
+          <i class = "fa fa-repeat refreshIcon--backwards"></i>
+        </div>
+        <div class = "filters__button">
+          <i class="fa fa-minus" aria-hidden="true"></i>
+        </div>
+        <div class = "filters__button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class = "filters__bottom">
+      <div class = "filters__instructionText">
+        Select Topic(s)
+      </div>
+      <app-tags>  </app-tags>
+    </div>
+  </div>
+  <div class = "content">
+    <div class = "content__tabs">
+      <div class = "content__tab">
+        <div>
+          <i class="icon-articles"></i>
+        </div>
+        <div>
+          ARTICLES
+        </div>
+      </div>
+      <div class = "content__tab">
+        <div>
+          <i class="icon-videos"></i>
+        </div>
+        <div>
+          VIDEOS
+        </div>
+      </div>
+      <div class = "content__tab">
+        <div>
+          <i class="icon-podcasts"></i>
+        </div>
+        <div>
+          PODCASTS
+        </div>
+      </div>
+    </div>
+    <div class = "content__feed">
+      <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
+      <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
+      <app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts>
+    </div>
+  </div>
+</div>

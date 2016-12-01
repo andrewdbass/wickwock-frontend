@@ -1,38 +1,12 @@
-<!-- <app-menu [show] = "showMenu" ></app-menu>
-<div class = "top">
-  <div class = "paddingWrapper">
-    <div class = "topIcons">
-      <div class = "hamburgerIcon" (click) = "toggleMenu()">
-        <i class = "fa fa-bars"></i>
-      </div>
-      <div class = "refreshIcon" (click) = "refreshTime()">
-        <i class = "fa fa-repeat refreshIcon--backwards"></i>
-      </div>
-    </div>
-    <div class="sliderthing" >
-      <app-slider [refresh] = "refresh" (time) = "newTime($event)"></app-slider>
-    </div>
 
-  </div>
-  <div class = "bars">
-    <div class = "bar bar--articles" *ngIf= "articlesSelected"></div>
-    <div class = "bar bar--videos" *ngIf= "videosSelected"></div>
-    <div class = "bar bar--podcasts" *ngIf= "podcastsSelected"></div>
-  </div>
-</div>
-<app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
-<div class = "tabs">
-  <div class = "tab " [ngClass]= "{'tab--selected':articlesSelected}" (click) = "articles()">
-    ARTICLES
-  </div>
-  <div class = "tab" [ngClass]= "{'tab--selected':videosSelected}" (click) = "videos()">
-    VIDEOS
-  </div>
-  <div class = "tab" [ngClass]= "{'tab--selected':podcastsSelected}" (click) = "podcasts()">
-    PODCASTS
+<div class = "header">
+  <div class = "header__contents">
+    <div class = "header__logo">
+      <img src = "../assets/images/header_logo.png"/>
+    </div>
+    <div class = "header__navLinks">
+      Link
+    </div>
   </div>
 </div>
-<app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
-<app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
-<app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts> -->
 <router-outlet></router-outlet>

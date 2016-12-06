@@ -52,6 +52,7 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
 
     let changes = Observable.merge(this.time, this.tags);
+
     changes.subscribe((c)=>{
       if (typeof c !=="undefined" && typeof c !== 'number') {
         this.tagsValue = c
@@ -80,7 +81,7 @@ export class VideosComponent implements OnInit {
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
           me.loadMore()
-          console.log("CALLED")
+          console.log("CALLED VIDEOS !!!!!!!!!!!!!!!!!!!!!!!")
        }
     });
   }

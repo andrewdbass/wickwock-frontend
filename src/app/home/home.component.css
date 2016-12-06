@@ -29,6 +29,8 @@
 }
 .filters__instructionText{
   margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
 }
 .sliderthing{
   display: flex;

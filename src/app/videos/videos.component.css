@@ -6,6 +6,10 @@
   padding: 4vh;
   /*height: 70vw;*/
 }
+.video a{
+  text-decoration: none;
+  color:black;
+}
 .video__iframe{
   display: block;
   width: 70vw;

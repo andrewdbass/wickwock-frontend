@@ -54,9 +54,14 @@
     </div>
     <div class = "filters__bottom">
       <div class = "filters__instructionText">
-        Select Topic(s)
+        <div>
+          Select Topic(s)
+        </div>
+        <div (click) = "toggleAllTags()">
+          Toggle All
+        </div>
       </div>
-      <app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
+      <app-tags (selectedTags) = "changeSelectedTags($event)" [toggleAll] = "toToggle" ></app-tags>
     </div>
   </div>
   <div class = "content">

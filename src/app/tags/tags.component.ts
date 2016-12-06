@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 
 @Component({
@@ -8,7 +8,8 @@ import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 })
 export class TagsComponent implements OnInit {
   private tags =[];
-  private allSelected = true;
+  private allSelected = false;
+  @Input() toggleAll: any;
   @Output() selectedTags = new EventEmitter();
   constructor(
     private http: Http
@@ -91,6 +92,9 @@ export class TagsComponent implements OnInit {
   }
   ngOnInit() {
     this.loadResults();
+    this.toggleAll.subscribe((val)=>{
+      this.changeAllTags(!this.allSelected)
+    })
   }
 
 }

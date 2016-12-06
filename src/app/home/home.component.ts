@@ -24,8 +24,12 @@ export class HomeComponent implements OnInit{
     "At a party and wishing you weren't? Choose a time and we will find something for you to do."
   ]
   public emptyStateMessageIndex = 0;
+  public toToggle = new EventEmitter();
   constructor(){
 
+  }
+  public toggleAllTags(){
+    this.toToggle.emit(true)
   }
   public newTime(event){
     this.stime.emit(event.value)

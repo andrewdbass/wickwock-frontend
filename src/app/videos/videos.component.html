@@ -1,15 +1,10 @@
-<div *ngFor = "let video of videos" (click) = "showVideo(video.id)">
+<div *ngFor = "let video of videos">
   <div class = "video">
     <a [routerLink]="'/video/'+video.id" routerLinkActive="active">
       <div *ngIf= '!video.showPlayer'>
         <img [src]="video.image" class = "video__image"/>
       </div>
-      <div *ngIf= 'video.showPlayer'>
-         <iframe id="ytplayer" type="text/html" class = "video__iframe"
-      [src]=" video.link | safe"
-    frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
-      </div>
-      <div *ngIf= '!video.showPlayer' class = "video__play-button" click = "showVideo(video.id.videoId)">
+      <div *ngIf= '!video.showPlayer' class = "video__play-button">
         <img src = "../../assets/images/play_button.png" class = "video__play-button__img"/>
       </div>
       <div class = "video__title">

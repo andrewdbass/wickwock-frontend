@@ -38,16 +38,16 @@
         Set Time
       </div>
       <div class="sliderthing" >
-        <app-slider [refresh] = "refresh" (time) = "newTime($event)"></app-slider>
+        <app-slider [setTime] = "setTime" (time) = "newTime($event)"></app-slider>
       </div>
       <div class ="filters__buttons">
-        <div class = "filters__button">
+        <div class = "filters__button" (click)="setSliderTime(0)">
           <i class = "fa fa-repeat refreshIcon--backwards"></i>
         </div>
-        <div class = "filters__button">
+        <div class = "filters__button" (click)="setSliderTime(sliderTime-1)">
           <i class="fa fa-minus" aria-hidden="true"></i>
         </div>
-        <div class = "filters__button">
+        <div class = "filters__button" (click)="setSliderTime(sliderTime+1)">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class = "filters__instructionText">
         Select Topic(s)
       </div>
-      <app-tags>  </app-tags>
+      <app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
     </div>
   </div>
   <div class = "content">
@@ -86,10 +86,15 @@
         </div>
       </div>
     </div>
-    <div class = "content__feed">
-      <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
-      <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
-      <app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts>
+    <div >
+      <div *ngIf="sliderTime===0" class = "emptyStateText">
+        {{emptyStateMessages[emptyStateMessageIndex]}}
+      </div>
+      <div class = "content__feed">
+        <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" ></app-articles>
+        <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" ></app-videos>
+        <app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags"></app-podcasts>
+      </div>
     </div>
   </div>
 </div>

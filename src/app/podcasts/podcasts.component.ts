@@ -15,13 +15,6 @@ export class PodcastsComponent implements OnInit {
   @Input() tags: EventEmitter<any>;
   public timeValue: number;
   public tagsValue =[];
-
-  public emptyStateMessages =[
-    "Bored at work? Set the timer and we will serve up some awesome content.",
-    "Sitting on the john? Pick a time and we will find the perfect thing to listen to.",
-    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
-  ]
-  public emptyStateMessageIndex = 0;
   private podcasts = [];
   private nextnextRequest = {}
   public lastRequestedUrl = ""
@@ -70,7 +63,6 @@ export class PodcastsComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
     let change = Observable.merge(this.time, this.tags);
     change.subscribe((c)=>{
       if (typeof c !=="undefined" && typeof c !== 'number') {

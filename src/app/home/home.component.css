@@ -89,9 +89,19 @@
 }
 .content__feed{
   display: flex;
+  justify-content: space-between;
+}
+.content__feed *{
+  width: 33%;
 }
 
-
+.emptyStateText{
+    text-align: center;
+    width: 30%;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-right: auto;
+}
 
 
 

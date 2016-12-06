@@ -18,13 +18,7 @@ export class ArticlesComponent implements OnInit {
   public articles = [];
   public nextRequest = ""
   public nextPage = 1
-  public emptyStateMessages =[
-    "Bored at work? Set the timer and we will serve up some awesome content.",
-    "Sitting on the john? Pick a time and we will find the perfect thing to read.",
-    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
-  ]
   public lastRequestedUrl = ""
-  public emptyStateMessageIndex = 0;
   public loading = false;
   constructor(
     private http: Http
@@ -46,8 +40,6 @@ export class ArticlesComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
-
     let change = Observable.merge(this.time, this.tags);
 
     change.subscribe((c)=>{

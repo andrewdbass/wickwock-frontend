@@ -18,25 +18,25 @@ export class TagsComponent implements OnInit {
       console.log(tag.selected)
       if(val) {
         tag.selected = true;
-        tag.style = ['tag', 'tag--selected']
+        tag.style = ['filters__tile', 'filters__tile--selected']
         this.allSelected = true
       }
       else{
         tag.selected = false;
-        tag.style = ['tag']
+        tag.style = ['filters__tile']
         this.allSelected = false;
       }
     }
     this.updateOutput();
   }
   private toggleTag(tag){
-    if(tag.style.indexOf("tag--selected") !== -1){
-      tag.style = ["tag"]
+    if(tag.style.indexOf("filters__tile--selected") !== -1){
+      tag.style = ["filters__tile"]
       tag.selected = false
       this.allSelected = false;
     }
     else{
-      tag.style.push("tag--selected")
+      tag.style.push("filters__tile--selected")
       tag.selected = true;
     }
     this.updateOutput()
@@ -61,8 +61,8 @@ export class TagsComponent implements OnInit {
         }
         else{
           for( let tag of this.tags) {
-            tag.style = ["tag", "tag--selected"]
-            tag.selected = true;
+            tag.style = ["filters__tile"]
+            tag.selected = false;
           }
           this.updateOutput()
         }
@@ -81,8 +81,8 @@ export class TagsComponent implements OnInit {
         }
         else{
           for( let tag of this.tags) {
-            tag.style = ["tag", "tag--selected"]
-            tag.selcted = true;
+            tag.style = ["filters__tile"]
+            tag.selcted = false;
           }
           this.updateOutput()
         }

@@ -4,6 +4,10 @@
   align-items: center;
   flex-direction: column;
 }
+.filters__tile--selected{
+  background-color: white;
+  color: #0A2B7C;
+}
 .tile__content{
   display: flex;
   align-items: center;

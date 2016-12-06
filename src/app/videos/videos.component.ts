@@ -21,13 +21,6 @@ export class VideosComponent implements OnInit {
   public response: any;
   public lastRequestedUrl = ""
   public nextRequest = ""
-
-  public emptyStateMessages =[
-    "Bored at work? Set the timer and we will serve up some awesome content.",
-    "Sitting on the john? Pick a time and we will find the perfect thing to read.",
-    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
-  ]
-  public emptyStateMessageIndex = 0;
   public loading = false;
 
   constructor(
@@ -57,7 +50,6 @@ export class VideosComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
 
     let changes = Observable.merge(this.time, this.tags);
     changes.subscribe((c)=>{

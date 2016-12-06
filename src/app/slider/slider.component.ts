@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter }
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  @Input() refresh: any;
+  @Input() setTime: any;
   @Output() time = new EventEmitter();
   @ViewChild("slider") slider;any
   public width = 320
@@ -43,9 +43,9 @@ export class SliderComponent implements OnInit {
       width:8,
       sliderType: "min-range",
     });
-    this.refresh.subscribe((r)=>{
+    this.setTime.subscribe((r)=>{
       console.log(r)
-      console.log($(this.slider.nativeElement).roundSlider("setValue", 0))
+      console.log($(this.slider.nativeElement).roundSlider("setValue", r))
     })
   }
 }

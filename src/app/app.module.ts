@@ -15,11 +15,13 @@ import { MenuComponent } from './menu/menu.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
-import { ArticleComponent } from './article/article.component';
 import {MdGridListModule} from '@angular2-material/grid-list/grid-list.js';
+import { VideoComponent } from './video/video.component';
+import { PodcastComponent } from './podcast/podcast.component';
 
 const appRoutes: Routes = [
-  { path: 'article/:id', component: ArticleComponent },
+  { path: 'video/:id', component: VideoComponent },
+  { path: 'podcast/:id', component: PodcastComponent },
   { path: '', component: HomeComponent },
 ];
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     PodcastsComponent,
     TagsComponent,
     HomeComponent,
-    ArticleComponent
+    VideoComponent,
+    PodcastComponent
   ],
   imports: [
     BrowserModule,

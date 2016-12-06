@@ -15,7 +15,7 @@
 
 </div> -->
 <md-grid-list cols="3" gutterSize="18px" >
-   <md-grid-tile *ngFor="let tag of tags" class = "filters__tile" >
+   <md-grid-tile *ngFor="let tag of tags" [ngClass] = "tag.style" (click) = "toggleTag(tag)">
      <div class = "tile__content">
        <div class="tile__icon">
          <i class="icon-business"></i>

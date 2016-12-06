@@ -23,7 +23,7 @@ export class PodcastComponent implements OnInit {
     console.log(this.route.params.value)
     // videoId = this.route.params.value.id
     // print(videoId)
-    this.url = "http://www.wickwock.com/api/podcasts?id=" + this.route.params.value.id
+    this.url = "https://www.wickwock.com/api/podcasts?id=" + this.route.params.value.id
     this.http.get(this.url)
       .map(response => response.json())
       .subscribe( (res) => {

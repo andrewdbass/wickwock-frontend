@@ -81,7 +81,7 @@ export class PodcastsComponent implements OnInit {
       }
       // else console.log(c)
       console.log(this.tagsValue)
-      var url ='https://wickwock.com/api/podcasts/?duration='+this.timeValue
+      var url ='https://m.wickwock.com/api/podcasts/?duration='+this.timeValue
       for(let tag of this.tagsValue) {
         url = url + "&tags="+ tag.id
       }
@@ -91,7 +91,7 @@ export class PodcastsComponent implements OnInit {
         .subscribe((res)=>{
           this.podcasts = res.results
           this.nextRequest = res
-          this.lastRequestedUrl = 'https://wickwock.com/api/podcasts/?duration='+this.timeValue
+          this.lastRequestedUrl = 'https://m.wickwock.com/api/podcasts/?duration='+this.timeValue
           });
       })
       this.tags.emit(this.defaultTags)

@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     console.log(this.route.params.value)
     articleId = this.route.params.value.id
-    url = "http://localhost:8000/api/articles?id=" + articleId
+    url = "http://m.wickwock.com/api/articles?id=" + articleId
     this.http.get(url)
       .map(response => response.json())
       .subscribe( (res) => {

@@ -11,7 +11,8 @@ import 'rxjs/Rx';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
-  private video= new EventEmitter();
+  private video= {}
+  // private video= new EventEmitter();
   private url: string;
   private clock = Observable.interval(1000)
   constructor(
@@ -29,7 +30,7 @@ export class VideoComponent implements OnInit {
       .map(response => response.json())
       .subscribe( (res) => {
         console.log(res)
-        this.video.emit(res.results[0])
+        this.video = res.results[0]
       });
   }
 

@@ -1,12 +1,12 @@
-<div class = "video" *ngFor = "let vid of [(video | async)]">
+<!-- <div class = "video" *ngFor = "let vid of [(video | async)]"> -->
   <div class = "video__title">
-    {{vid.title}}
+    {{video.title}}
   </div>
   <iframe
     id="ytplayer"
     type="text/html"
     class = "video__iframe"
-    [src]="vid.link | safe"
+    [src]="video.link | safe"
     frameborder="0"
     allowfullscreen="allowfullscreen"
     mozallowfullscreen="mozallowfullscreen"
@@ -26,4 +26,4 @@
       </a>
     </div>
   </div>
-</div>
+<!-- </div> -->

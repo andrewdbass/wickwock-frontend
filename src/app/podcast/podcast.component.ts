@@ -11,8 +11,8 @@ import 'rxjs/Rx';
   styleUrls: ['./podcast.component.css']
 })
 export class PodcastComponent implements OnInit {
-  private url:string
-  private podcast= new EventEmitter();
+  private url:string;
+  private podcast= {};
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -28,7 +28,7 @@ export class PodcastComponent implements OnInit {
       .map(response => response.json())
       .subscribe( (res) => {
         console.log(res)
-        this.podcast.emit(res.results[0])
+        this.podcast = res.results[0]
       });
   }
 

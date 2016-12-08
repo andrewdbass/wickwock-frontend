@@ -73,6 +73,10 @@ export class PodcastsComponent implements OnInit {
       }
       // else console.log(c)
       console.log(this.tagsValue)
+      // 60+ minutes functionality
+      if(this.timeValue === 60){
+        this.timeValue = 10000
+      }
       var url ='https://wickwock.com/api/podcasts/?duration='+this.timeValue
       for(let tag of this.tagsValue) {
         url = url + "&tags="+ tag.id

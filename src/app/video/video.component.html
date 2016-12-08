@@ -2,7 +2,7 @@
   <div class = "video__title">
     {{video.title}}
   </div>
-  <iframe
+  <iframe *ngIf="video.link"
     id="ytplayer"
     type="text/html"
     class = "video__iframe"

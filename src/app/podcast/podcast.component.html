@@ -6,7 +6,7 @@
 
   <!-- <img *ngIf="podcast.image" class = "podcast__image" src = "podcast.image"/> -->
   <div class = "podcast__player">
-    <audio preload="auto" controls>
+    <audio *ngIf = "podcast.link" preload="auto" controls>
       <source [src]="podcast.link" type="audio/mpeg" async>
     </audio>
     <a [href] = "podcast.link" download>
@@ -27,5 +27,9 @@
         <img class = "podcast__shareIcon" src = "../../assets/images/twitter.png" />
       </a>
     </div>
+  </div>
+  <div>
+    <ng2-adsense  [adClient]="'ca-pub-6401100792447378'" [adSlot]="1576105446">
+    </ng2-adsense>
   </div>
 </div>

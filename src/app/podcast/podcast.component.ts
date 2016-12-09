@@ -29,6 +29,7 @@ export class PodcastComponent implements OnInit {
       .subscribe( (res) => {
         console.log(res)
         this.podcast = res.results[0]
+        this.podcast.link = this.podcast.link.substring(0, this.podcast.link.indexOf(".mp3")+4)
       });
   }
 

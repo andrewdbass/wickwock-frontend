@@ -17,10 +17,12 @@ import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
 import { PodcastComponent } from './podcast/podcast.component';
+import { VideoComponent } from './video/video.component';
 
 const appRoutes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
   { path: 'podcast/:id', component: PodcastComponent },
+  { path: 'video/:id', component: VideoComponent },
   { path: '', component: HomeComponent },
 ];
 @NgModule({
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     TagsComponent,
     HomeComponent,
     ArticleComponent,
-    PodcastComponent
+    PodcastComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

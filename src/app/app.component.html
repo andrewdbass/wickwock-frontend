@@ -40,6 +40,8 @@
   <div class = "header__icon" (click) = "toggleMenu()">
     <i class = "fa fa-bars"></i>
   </div>
-  <div class = "header__logo"></div>
+  <a [routerLink]="'/'" routerLinkActive="active">
+    <div class = "header__logo"></div>
+  </a>
 </div>
 <router-outlet></router-outlet>

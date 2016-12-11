@@ -3,39 +3,14 @@
 <div class = "filters__top">
   <div class = "filters__instructionText">
     Set Time
+    <div class = "filters__button" (click)="setSliderTime(0)">
+      <i class = "fa fa-repeat refreshIcon--backwards"></i>
+    </div>
   </div>
   <div class="sliderthing" >
     <app-slider [setTime] = "setTime" (time) = "newTime($event)"></app-slider>
   </div>
-  <div class ="filters__buttons">
-    <div class = "filters__button" (click)="setSliderTime(0)">
-      <i class = "fa fa-repeat refreshIcon--backwards"></i>
-    </div>
-    <div class = "filters__button" (click)="setSliderTime(sliderTime-1)">
-      <i class="fa fa-minus" aria-hidden="true"></i>
-    </div>
-    <div class = "filters__button" (click)="setSliderTime(sliderTime+1)">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-    </div>
-  </div>
 </div>
-
-<!-- <div class = "top">
-  <div class = "paddingWrapper">
-    <div class = "topIcons">
-      <div class = "hamburgerIcon" (click) = "toggleMenu()">
-        <i class = "fa fa-bars"></i>
-      </div>
-      <div class = "top__logo"><img src = '../../assets/images/white_logo.png'/></div>
-      <div class = "refreshIcon" (click) = "refreshTime()">
-        <i class = "fa fa-repeat refreshIcon--backwards"></i>
-      </div>
-    </div>
-    <div class="sliderthing" >
-      <app-slider [refresh] = "refresh" (time) = "newTime($event)"></app-slider>
-    </div>
-  </div>
-</div> -->
 <app-tags (selectedTags) = "changeSelectedTags($event)"></app-tags>
 <div class = "tabs">
   <div class = "tab " [ngClass]= "{'tab--selected':articlesSelected}" (click) = "articles()">

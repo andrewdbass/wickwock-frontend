@@ -13,8 +13,9 @@
   padding: 24px;
 }
 .filters__instructionText{
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   margin-left: 34px;
+  margin-right: 34px;
   display: flex;
   justify-content: space-between;
 }

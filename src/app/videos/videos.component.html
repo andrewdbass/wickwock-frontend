@@ -3,7 +3,7 @@
 </div>
 <div *ngFor = "let video of videos" (click) = "showVideo(video.id)">
   <div class = "video">
-    <a [routerLink]="'/video/'+video.id" routerLinkActive="active" target="_blank">
+    <a [routerLink]="'/video/'+video.id" routerLinkActive="active" >
       <div *ngIf= '!video.showPlayer'>
         <img [src]="video.image" class = "video__image"/>
       </div>

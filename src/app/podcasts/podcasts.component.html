@@ -3,7 +3,7 @@
 </div>
 <div *ngFor = "let podcast of podcasts " >
   <div class = "card">
-    <a [routerLink]="'/podcast/'+podcast.id" routerLinkActive="active" target="_blank">
+    <a [routerLink]="'/podcast/'+podcast.id" routerLinkActive="active" >
       <div class = "podcast__title">{{podcast.title}}</div>
       <div class = "card__image">
         <img class = "podcast__image" [src] = "podcast.image" />

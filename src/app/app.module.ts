@@ -16,9 +16,11 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
 import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
+import { PodcastComponent } from './podcast/podcast.component';
 
 const appRoutes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
+  { path: 'podcast/:id', component: PodcastComponent },
   { path: '', component: HomeComponent },
 ];
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     PodcastsComponent,
     TagsComponent,
     HomeComponent,
-    ArticleComponent
+    ArticleComponent,
+    PodcastComponent
   ],
   imports: [
     BrowserModule,

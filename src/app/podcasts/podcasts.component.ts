@@ -33,26 +33,6 @@ export class PodcastsComponent implements OnInit {
   constructor(
     private http: Http
   ) {}
-  private playPodcast(podcast,){
-    if(this.active.id === podcast.id){
-      this.active.widget.play()
-    }
-    else{
-      if(this.active.id ){
-        this.active.widget.pause();
-      }
-      this.active.widget = new Audio(podcast.link);
-      this.active.id = podcast.id
-      this.active.widget.play()
-    }
-    this.active.playing = true
-
-  }
-  private pausePodcast(){
-    this.active.widget.pause();
-    this.active.playing = false
-
-  }
   private loadMore(){
     if (this.lastRequestedUrl !== this.nextRequest.next) {
       this.lastRequestedUrl = this.nextRequest.next
@@ -81,6 +61,9 @@ export class PodcastsComponent implements OnInit {
       }
       // else console.log(c)
       console.log(this.tagsValue)
+      if(this.timeValue===60){
+        this.timeValue = 1000000
+      }
       var url ='https://m.wickwock.com/api/podcasts/?duration='+this.timeValue
       for(let tag of this.tagsValue) {
         url = url + "&tags="+ tag.id

@@ -16,10 +16,20 @@ export class HomeComponent implements OnInit{
   public articlesSelected = true;
   public videosSelected = false;
   public podcastsSelected = false;
-  public refresh = new EventEmitter();
+  public setTime = new EventEmitter();
   public showMenu = false;
+  public emptyStateMessages =[
+    "Bored at work? Set the timer and we will serve up some awesome content.",
+    "Sitting on the john? Pick a time and we will find the perfect thing to read.",
+    "At a party and wishing you weren't? Choose a time and we will find something for you to do."
+  ]
+  public emptyStateMessageIndex = 0;
+  public toToggle = new EventEmitter();
   constructor(){
 
+  }
+  public toggleAllTags(){
+    this.toToggle.emit(true)
   }
   public newTime(event){
     this.stime.emit(event.value)
@@ -56,13 +66,14 @@ export class HomeComponent implements OnInit{
     this.podcastsSelected = true;
 
   }
-  public refreshTime() {
-    this.refresh.emit(true);
+  public setSliderTime(time) {
+    this.setTime.emit(time);
   }
   public toggleMenu() {
     this.showMenu = !this.showMenu;
   }
   ngOnInit(){
     this.stime.emit(1)
+    this.emptyStateMessageIndex = Math.floor(Math.random()*(this.emptyStateMessages.length))
   }
 }

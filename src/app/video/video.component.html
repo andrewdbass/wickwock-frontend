@@ -1,3 +1,13 @@
+<div class = "video__header">
+  <a [routerLink]="'/'" routerLinkActive="active">
+    <div>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+  </a>
+  <div class= "video__headerTitle">
+    Video - {{video.duration}}m
+  </div>
+</div>
 <div class = "video" >
   <div class = "video__title">
     {{video.title}}

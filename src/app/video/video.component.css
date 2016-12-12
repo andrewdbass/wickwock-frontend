@@ -3,6 +3,19 @@
   width: 100%;
   height: 100%;
 }
+.video__header{
+  padding: 18px;
+  color: white;
+  display: flex;
+  background-color: #3b41ff;
+}
+.video__header a{
+  color: white;
+  text-decoration: none;
+}
+.video__headerTitle{
+  margin-left: 16px;
+}
 .video a{
   text-decoration: none;
   color:black;

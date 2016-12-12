@@ -3,6 +3,19 @@
   /*width: 80%;*/
   height: 100%;
 }
+.podcast__header{
+  padding: 18px;
+  color: white;
+  display: flex;
+  background-color: #3b41ff;
+}
+.podcast__header a{
+  color: white;
+  text-decoration: none;
+}
+.podcast__headerTitle{
+  margin-left: 16px;
+}
 .podcast__title{
   padding-top: 32px;
   margin-bottom: 32px;

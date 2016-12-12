@@ -5,7 +5,7 @@
   background-color: #3b41ff;
   color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .header__icon{

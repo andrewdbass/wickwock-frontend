@@ -1,3 +1,13 @@
+<div class = "podcast__header">
+  <a [routerLink]="'/'" routerLinkActive="active">
+    <div>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+  </a>
+  <div class= "podcast__headerTitle">
+    Podcast - {{podcast.duration}}m
+  </div>
+</div>
 <div class = "podcast">
   <div class = "podcast__title">
     {{podcast.title}}

@@ -1,11 +1,18 @@
 <app-menu [show] = "showMenu" ></app-menu>
-
+<div class = "header">
+  <div class = "header__icon" (click) = "toggleMenu()">
+    <i class = "fa fa-bars"></i>
+  </div>
+  <a [routerLink]="'/'" routerLinkActive="active">
+    <div class = "header__logo"></div>
+  </a>
+  <div class = "filters__button" (click)="setSliderTime(0)">
+    <i class = "fa fa-repeat refreshIcon--backwards"></i>
+  </div>
+</div>
 <div class = "filters__top">
   <div class = "filters__instructionText">
     Set Time
-    <div class = "filters__button" (click)="setSliderTime(0)">
-      <i class = "fa fa-repeat refreshIcon--backwards"></i>
-    </div>
   </div>
   <div class="sliderthing" >
     <app-slider [setTime] = "setTime" (time) = "newTime($event)"></app-slider>

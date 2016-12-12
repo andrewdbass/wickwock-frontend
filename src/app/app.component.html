@@ -35,7 +35,7 @@
 <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "articlesSelected"></app-articles>
 <app-videos [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "videosSelected"></app-videos>
 <app-podcasts [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" *ngIf = "podcastsSelected" ></app-podcasts> -->
-<app-menu [show] = "showMenu" ></app-menu>
+<!-- <app-menu [show] = "showMenu" ></app-menu>
 <div class = "header">
   <div class = "header__icon" (click) = "toggleMenu()">
     <i class = "fa fa-bars"></i>
@@ -43,5 +43,5 @@
   <a [routerLink]="'/'" routerLinkActive="active">
     <div class = "header__logo"></div>
   </a>
-</div>
+</div> -->
 <router-outlet></router-outlet>

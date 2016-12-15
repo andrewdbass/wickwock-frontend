@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
 import { PodcastComponent } from './podcast/podcast.component';
 import { VideoComponent } from './video/video.component';
+import { PopupComponent} from './popup/popup.component';
 
 const appRoutes: Routes = [
   { path: 'article/:id', component: ArticleComponent },
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ArticleComponent,
     PodcastComponent,
-    VideoComponent
+    VideoComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

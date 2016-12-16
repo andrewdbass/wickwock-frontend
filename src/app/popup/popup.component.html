@@ -1,0 +1,14 @@
+<div class = "popup" *ngIf="showPopup">
+  <div class = "popup__top">
+    <div class = "popup__message">Get the best of Wick Wock. Subscribe to our newsletter</div>
+    <div class = "popup__close" (click) = "closePopup()">
+      <i class="fa fa-times-circle" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class = "popup__form">
+    <input type="email" class = "popup__input" placeholder="email@example.com"/>
+    <div class = "popup__button">
+      <i class="fa fa-check" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>

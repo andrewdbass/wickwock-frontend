@@ -2,7 +2,10 @@
   Loading...
 </div>
 <div *ngIf="articles.length===0" class = "emptyStateText">
-  {{emptyStateMessages[emptyStateMessageIndex]}}
+  <div class = "emptyStateText__title">
+  {{emptyStateMessages[emptyStateMessageIndex].title}}
+  </div>
+  {{emptyStateMessages[emptyStateMessageIndex].message}}
 </div>
 
 <div *ngFor = "let article of articles">

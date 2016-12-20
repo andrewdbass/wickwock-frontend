@@ -1,5 +1,8 @@
 <div *ngIf="videos.length==0" class = "emptyStateText">
-  {{emptyStateMessages[emptyStateMessageIndex]}}
+  <div class = "emptyStateText__title">
+  {{emptyStateMessages[emptyStateMessageIndex].title}}
+  </div>
+  {{emptyStateMessages[emptyStateMessageIndex].message}}
 </div>
 <div *ngFor = "let video of videos" (click) = "showVideo(video.id)">
   <div class = "video">

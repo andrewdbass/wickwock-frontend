@@ -75,7 +75,7 @@
 
 }
 .content__tabs{
-  height: 68px;
+  height: 46px;
   width: calc(100vw - 320px);
 
   display: flex;
@@ -95,6 +95,9 @@
 }
 .content__feed *{
   width: 33%;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
 .emptyStateText{

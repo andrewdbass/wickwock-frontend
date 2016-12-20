@@ -1,9 +1,8 @@
 .header{
   height: 95px;
-  border-top: solid #1F60FF 17px;
+  border-top: solid #1F60FF 7px;
   background-color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.17);
   -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.17);
@@ -12,11 +11,15 @@
 z-index: 10;
 }
 .header__contents{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 38px;
   display: flex;
   justify-content: space-between;
+}
+.header__logoImage{
+  width: 221px;
+  height: 39px;
+  background-image: url(../assets/images/header_logo.png);
+  background-size: cover;
 }
 .container{
   width: 100vw;

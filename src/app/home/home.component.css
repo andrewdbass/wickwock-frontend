@@ -101,11 +101,16 @@
 }
 
 .emptyStateText{
+    color: #AEB0B7;
     text-align: center;
-    width: 30%;
+    width: 40%;
     margin-left: auto;
     margin-top: 5%;
     margin-right: auto;
+}
+.emptyStateText__title{
+  font-size: 32px;
+  margin-bottom: 4px;
 }
 
 

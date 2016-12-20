@@ -1,7 +1,7 @@
 .podcast{
   background-color: white;
   width: 80%;
-  height: 100%;
+  height: 100vh;
 }
 .podcast__title{
   padding-top: 32px;

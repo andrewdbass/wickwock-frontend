@@ -12,6 +12,7 @@ import 'rxjs/Rx';
 })
 export class VideoComponent implements OnInit {
   private video= {}
+  private tag = "";
   // private video= new EventEmitter();
   private url: string;
   private clock = Observable.interval(1000)
@@ -31,6 +32,7 @@ export class VideoComponent implements OnInit {
       .subscribe( (res) => {
         console.log(res)
         this.video = res.results[0]
+        this.tag = video.tags[0]
       });
   }
 

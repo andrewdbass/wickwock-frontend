@@ -93,7 +93,10 @@
     </div>
     <div >
       <div *ngIf="sliderTime===0" class = "emptyStateText">
-        {{emptyStateMessages[emptyStateMessageIndex]}}
+        <div class = "emptyStateText__title">
+        {{emptyStateMessages[emptyStateMessageIndex].title}}
+        </div>
+        {{emptyStateMessages[emptyStateMessageIndex].message}}
       </div>
       <div class = "content__feed">
         <app-articles [time]="stime" [defaultTime] = 'sliderTime' [defaultTags] = "tagsList" [tags]="tags" ></app-articles>

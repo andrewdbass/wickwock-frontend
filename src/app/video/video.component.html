@@ -19,7 +19,7 @@
   </iframe>
   <div class = "video__shareArea">
     <div class = "video__shareIcon">
-      <a [href]="'https://www.facebook.com/sharer/sharer.php?u='+url" target="_blank">
+      <a [href]="'https://www.facebook.com/sharer/sharer.php?u=https://wickwock.com/vidoes'+video.id" target="_blank">
         <img class = "video__shareIcon" src = "../../assets/images/facebook.png" />
       </a>
     </div>
@@ -33,7 +33,7 @@
     <ng2-adsense [adClient]="'ca-pub-6401100792447378'" [adSlot]="1576105446">
     </ng2-adsense>
   </div>
-  <meta property="og:url"                content="{{url}}" />
+  <meta property="og:url"                content="{{'https://wickwock.com/vidoes'+video.id}}" />
 
   <meta property="og:title"              content="{{video.title}}" />
   <meta property="og:description"        content="How much does culture influence creative thinking?" />

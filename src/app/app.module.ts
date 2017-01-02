@@ -19,10 +19,39 @@ import {MdGridListModule} from '@angular2-material/grid-list/grid-list.js';
 import { VideoComponent } from './video/video.component';
 import { PodcastComponent } from './podcast/podcast.component';
 
+import { MetaModule } from 'ng2-meta';
+
 const appRoutes: Routes = [
-  { path: 'video/:id', component: VideoComponent },
-  { path: 'podcast/:id', component: PodcastComponent },
-  { path: '', component: HomeComponent },
+  {
+    path: 'video/:id',
+    component: VideoComponent,
+    data: {
+      meta: {
+        title: 'Home page',
+        description: 'Description of the home page'
+      }
+    }
+  },
+  {
+    path: 'podcast/:id',
+    component: PodcastComponent,
+    data: {
+      meta: {
+        title: 'Home page',
+        description: 'Description of the home page'
+      }
+    }
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    data: {
+      meta: {
+        title: 'Home page',
+        description: 'Description of the home page'
+      }
+    }
+  },
 ];
 @NgModule({
   declarations: [
@@ -46,6 +75,7 @@ const appRoutes: Routes = [
     InfiniteScrollModule,
     AdsenseModule,
     RouterModule.forRoot(appRoutes),
+    MetaModule.forRoot(),
     MdGridListModule
   ],
   providers: [],

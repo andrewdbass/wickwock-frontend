@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router'
 import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { NGMeta } from 'ngmeta';
 
 import 'rxjs/Rx';
 

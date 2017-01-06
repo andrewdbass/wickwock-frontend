@@ -19,7 +19,17 @@ import {MdGridListModule} from '@angular2-material/grid-list/grid-list.js';
 import { VideoComponent } from './video/video.component';
 import { PodcastComponent } from './podcast/podcast.component';
 
-import { MetaModule } from 'ng2-meta';
+import { MetaConfig, MetaService } from 'ng2-meta';
+
+const metaConfig: MetaConfig = {
+  //Append a title suffix such as a site name to all titles
+  //Defaults to false
+  useTitleSuffix: true,
+  defaults: {
+    title: 'Wick Wock',
+    'og:image': 'www.wickwock.com/assets/images/header_logo.png',
+  }
+};
 
 
 const appRoutes: Routes = [

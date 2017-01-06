@@ -35,7 +35,7 @@ export class VideoComponent implements OnInit {
         console.log(res)
         this.video = res.results[0]
         this.tag = video.tags[0]
-        this.metaService.setTitle('Testing');
+        this.metaService.setTag('og:title', "ARGH!");
         this.metaService.setTag('og:image', "http://vignette2.wikia.nocookie.net/newpotco/images/1/1e/Jolly-roger.png");
       });
   }

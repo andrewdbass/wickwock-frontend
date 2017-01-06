@@ -2,7 +2,9 @@ import { Component, EventEmitter, OnInit} from '@angular/core';
 import { SliderComponent } from './slider/slider.component'
 import { ArticlesComponent } from './articles/articles.component'
 import { VideosComponent } from './videos/videos.component'
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+
+import { MetaService } from 'ng2-meta';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit{
   public podcastsSelected = false;
   public refresh = new EventEmitter();
   public showMenu = false;
-  constructor(){
+  constructor(private metaService: MetaService){
 
   }
   public newTime(event){

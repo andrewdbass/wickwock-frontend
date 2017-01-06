@@ -26,8 +26,8 @@ import { MetaModule, MetaConfig, MetaService } from 'ng2-meta';
 const metaConfig: MetaConfig = {
   defaults: {
     title: 'Wick Wock',
-    'og:image': 'https://www.wickwock.com/assets/images/header_logo.png',
-    'og:url': 'https://www.wickwock.com/',
+    'og:image': 'http://www.wickwock.com/assets/images/header_logo.png',
+    'og:url': 'http://www.wickwock.com/',
   }
 };
 

@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     InfiniteScrollModule,
     AdsenseModule,
     RouterModule.forRoot(appRoutes),
-    MetaModule.forRoot(),
+    MetaModule.forRoot(metaConfig),
     MdGridListModule
   ],
   providers: [],

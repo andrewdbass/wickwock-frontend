@@ -19,7 +19,7 @@ import {MdGridListModule} from '@angular2-material/grid-list/grid-list.js';
 import { VideoComponent } from './video/video.component';
 import { PodcastComponent } from './podcast/podcast.component';
 
-import { MetaConfig, MetaService } from 'ng2-meta';
+import { MetaModule, MetaConfig, MetaService } from 'ng2-meta';
 
 const metaConfig: MetaConfig = {
   //Append a title suffix such as a site name to all titles

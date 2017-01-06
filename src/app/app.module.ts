@@ -22,9 +22,8 @@ import { PodcastComponent } from './podcast/podcast.component';
 import { MetaModule, MetaConfig, MetaService } from 'ng2-meta';
 
 const metaConfig: MetaConfig = {
-  //Append a title suffix such as a site name to all titles
-  //Defaults to false
-  useTitleSuffix: true,
+
+
   defaults: {
     title: 'Wick Wock',
     'og:image': 'www.wickwock.com/assets/images/header_logo.png',

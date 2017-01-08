@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
   public podcastsSelected = false;
   public refresh = new EventEmitter();
   public showMenu = false;
-  constructor(private metaService: MetaService){
+  constructor(){
 
   }
   public newTime(event){

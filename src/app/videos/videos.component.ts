@@ -2,10 +2,12 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions,Jsonp } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import { SafePipe } from '../safe.pipe'
+// import { SafePipe } from '../safe.pipe'
 import 'rxjs/Rx';
 
 @Component({
   selector: 'app-videos',
+  // pipes: [EncodeTheUrl],
   templateUrl: './videos.component.html',
   styleUrls: ['./videos.component.css']
 })

@@ -17,6 +17,7 @@ export class VideoComponent implements OnInit {
   // private video= new EventEmitter();
   private url: string;
   private clock = Observable.interval(1000)
+  private img: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -25,7 +26,15 @@ export class VideoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    //Im going to have to pass any datat that i want to share in as paramaters, might as well ditch the whole api callve
+
+    // this.metaService.setTitle("ARGH!");
+
+    // this.metaService.setTag("og:description", this.route.params.value );
     console.log(this.route.params.value)
+    console.log(this.route.queryParams)
+    // consloe.log(this.route)
     // videoId = this.route.params.value.id
     // print(videoId)
     this.url = "https://www.wickwock.com/api/videos/?id=" + this.route.params.value.id
@@ -36,7 +45,8 @@ export class VideoComponent implements OnInit {
         this.video = res.results[0]
         this.tag = video.tags[0]
         // this.metaService.setTag("og:title", "ARGH!");
-        this.metaService.setTag("og:image", "http://vignette2.wikia.nocookie.net/newpotco/images/1/1e/Jolly-roger.png");
+        this.img = "http://www.ancient.eu/uploads/images/preview-1225.jpg"
+        this.metaService.setTag('og:image', 'http://www.ancient.eu/uploads/images/preview-1225.jpg');
       });
   }
 

@@ -11,6 +11,7 @@ import { SliderComponent } from './slider/slider.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { VideosComponent } from './videos/videos.component';
 import { SafePipe } from './safe.pipe';
+import { EncodeTheUrlPipe } from './encodeURI.pipe';
 import { MenuComponent } from './menu/menu.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { TagsComponent } from './tags/tags.component';
@@ -31,12 +32,22 @@ const metaConfig: MetaConfig = {
   }
 };
 
-
 const appRoutes: Routes = [
+//   {
+//   path: 'video/:id',
+//   component: VideoComponent,
+//   data: {
+//     meta: {
+//       title: 'Home page',
+//       description: 'Description of the home page'
+//     }
+//   }
+// },
   { path: 'video/:id', component: VideoComponent },
   { path: 'podcast/:id', component: PodcastComponent },
   { path: '', component: HomeComponent },
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +55,7 @@ const appRoutes: Routes = [
     ArticlesComponent,
     VideosComponent,
     SafePipe,
+    EncodeTheUrlPipe,
     MenuComponent,
     PodcastsComponent,
     TagsComponent,
@@ -59,7 +71,7 @@ const appRoutes: Routes = [
     InfiniteScrollModule,
     AdsenseModule,
     RouterModule.forRoot(appRoutes),
-    MetaModule.forRoot(metaConfig),
+    MetaModule.forRoot(),
     MdGridListModule
   ],
   providers: [],

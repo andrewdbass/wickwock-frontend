@@ -33,16 +33,6 @@ const metaConfig: MetaConfig = {
 };
 
 const appRoutes: Routes = [
-//   {
-//   path: 'video/:id',
-//   component: VideoComponent,
-//   data: {
-//     meta: {
-//       title: 'Home page',
-//       description: 'Description of the home page'
-//     }
-//   }
-// },
   { path: 'video/:id', component: VideoComponent },
   { path: 'podcast/:id', component: PodcastComponent },
   { path: '', component: HomeComponent },

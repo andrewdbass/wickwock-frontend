@@ -16,7 +16,7 @@ export class ArticlesComponent implements OnInit {
   public timeValue: number;
   public tagsValue =[];
   public articles = [];
-  public nextRequest = ""
+  public nextRequest = {next:""}
   public nextPage = 1
   public lastRequestedUrl = ""
   public loading = false;

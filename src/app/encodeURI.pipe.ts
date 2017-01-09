@@ -8,16 +8,15 @@ export class EncodeTheUrlPipe implements PipeTransform {
 
   constructor() {}
   transform(url) {
-    url = encodeURIComponent(url)
-    url = url.replace() ".", "%2E")
-    return url
+    //This is super hacky but it works
+    
+    // url = encodeURIComponent(url);
+    url = url.replace( ".", "***");
+    url = url.replace( ".", "***");
+    url = url.replace( ".", "***");
+    url = url.replace( ".", "***");
+    url = url.replace( ".", "***");
+    return url;
   }
-  // replaceAll(str, search, replacement){
-  //   if(str.indexOf(serach) === -1){
-  //     return str;
-  //   }
-  //   str.replace(search,replacement)
-  //   return this.replaceAll(str, search, replacement)
-  // }
 
 }

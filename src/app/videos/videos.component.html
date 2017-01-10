@@ -1,6 +1,6 @@
 <div *ngFor = "let video of videos">
   <div class = "video">
-    <a [routerLink]= "['/video/', video.id, {image:video.image | encodeTheUrl}]" routerLinkActive="active" target="_blank">
+    <a [routerLink]= "['/video/', video.id, {title: video.title, image:video.image | encodeTheUrl}]" routerLinkActive="active" target="_blank">
       <div *ngIf= '!video.showPlayer'>
         <img [src]="video.image" class = "video__image"/>
       </div>

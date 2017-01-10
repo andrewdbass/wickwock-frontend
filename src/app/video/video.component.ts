@@ -24,19 +24,32 @@ export class VideoComponent implements OnInit {
     private http: Http,
     private metaService: MetaService
   ) {}
+  setMetaTags() {
+    setTimeout(() => {
+      this.metaService.setTitle(this.route.params.value.title);
+    });
+    // this.metaService.setTitle(this.route.params.value.title);
+    this.metaService.setTag('og:description', "And other cool things on Wick Wock");
+    //need to add in title and image data to the url
+    this.metaService.setTag('og:url', "https://www.wickwock.com/video/" +
+    this.route.params.value.id + ";title=" +
+    this.route.params.value.title + ";image=" +
+    this.route.params.value.image);
+    let imgUrl = this.route.params.value.image;
+    imgUrl = imgUrl.replace("***",".")
+    imgUrl = imgUrl.replace("***",".")
+    imgUrl = imgUrl.replace("***",".")
+    imgUrl = imgUrl.replace("***",".")
+    this.metaService.setTag('og:image', imgUrl);
 
+  }
   ngOnInit() {
 
-    //Im going to have to pass any datat that i want to share in as paramaters, might as well ditch the whole api callve
+    this.setMetaTags();
 
-    // this.metaService.setTitle("ARGH!");
 
-    // this.metaService.setTag("og:description", this.route.params.value );
     console.log(this.route.params.value)
-    console.log(this.route.queryParams)
-    // consloe.log(this.route)
-    // videoId = this.route.params.value.id
-    // print(videoId)
+
     this.url = "https://www.wickwock.com/api/videos/?id=" + this.route.params.value.id
     this.http.get(this.url)
       .map(response => response.json())
